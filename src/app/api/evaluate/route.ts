@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { isValidToken, extractToken } from '@/lib/auth';
 
 const EVAL_JSON_PATH = path.resolve('..', 'results', 'batch_results_20260526_173249_evaluated.json');
 
 export async function POST(request: Request) {
   try {
+    // Verify admin token
+    const token = extractToken(request);
+    if (!isValidToken(token)) {
+      return NextResponse.json({ error: 'Unauthorized. Admin access required.' }, { status: 403 });
+    }
+
     const body = await request.json();
     const { id, scores, notes, evaluated, flagged } = body;
 

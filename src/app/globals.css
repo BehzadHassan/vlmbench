@@ -1,8 +1,70 @@
 @import "tailwindcss";
 
+/* ========================================
+   Orbital Intelligence — Design System
+   LEVIR-CD Evaluation Dashboard
+   ======================================== */
+
 :root {
-  --background: #020617;
-  --foreground: #f8fafc;
+  /* Core Palette */
+  --bg-deep: #020617;
+  --bg-base: #0b1326;
+  --bg-surface: #0f172a;
+  --bg-elevated: #131b2e;
+  --bg-card: #171f33;
+  --bg-card-high: #222a3d;
+  --bg-card-highest: #2d3449;
+  --bg-bright: #31394d;
+
+  /* Text */
+  --text-primary: #dae2fd;
+  --text-secondary: #c7c4d7;
+  --text-muted: #908fa0;
+  --text-faint: #464554;
+
+  /* Accents */
+  --accent-indigo: #6366f1;
+  --accent-indigo-light: #c0c1ff;
+  --accent-indigo-container: #8083ff;
+  --accent-emerald: #10b981;
+  --accent-emerald-light: #4edea3;
+  --accent-emerald-container: #00a572;
+  --accent-sky: #38bdf8;
+  --accent-sky-light: #7bd0ff;
+  --accent-rose: #f43f5e;
+  --accent-amber: #f59e0b;
+
+  --accent-blue: #378ADD;
+  --accent-teal: #1D9E75;
+  --accent-teal-light: #5DCAA5;
+  --accent-purple: #7F77DD;
+  --accent-purple-bg: #EEEDFE;
+  --accent-amber-slider: #EF9F27;
+  --accent-amber-bg: #FAEEDA;
+  --accent-coral: #D85A30;
+  --accent-coral-text: #4A1B0C;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Glass */
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-bg-solid: rgba(23, 31, 51, 0.85);
+  --glass-blur: 20px;
+  --glass-border: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-indigo: 0 0 20px rgba(99, 102, 241, 0.15);
+  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.15);
+
+  /* Misc */
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
 }
 
 @theme inline {
@@ -12,23 +74,312 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ========================================
+   Base
+   ======================================== */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Inter', var(--font-sans), system-ui, sans-serif;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ========================================
+   Grid Background
+   ======================================== */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ========================================
+   Glass Panels
+   ======================================== */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-subtle);
+}
+
+.glass-panel-solid {
+  background: var(--glass-bg-solid);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-default);
+}
+
+.glass-card {
+  background: rgba(23, 31, 51, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s ease-out;
+}
+
+.glass-card:hover {
+  background: rgba(23, 31, 51, 0.8);
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   Glow Effects
+   ======================================== */
+.glow-indigo {
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.2), 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2), 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.glow-border-indigo {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.1);
+}
+
+.glow-border-emerald {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.1);
+}
+
+/* ========================================
+   Dark Form Controls
+   ======================================== */
+.dark-input {
+  background: rgba(2, 6, 23, 0.5);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.dark-input:focus {
+  border-color: var(--accent-indigo);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+.dark-input::placeholder {
+  color: var(--text-muted);
+}
+
+.dark-select {
+  background: rgba(2, 6, 23, 0.5);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.dark-select:focus {
+  border-color: var(--accent-indigo);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+.dark-select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn-indigo {
+  background: var(--accent-indigo);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-indigo:hover {
+  background: #5558e6;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-indigo:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-emerald {
+  background: var(--accent-emerald);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-emerald:hover {
+  background: #0fa572;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.3);
+}
+
+.btn-teal {
+  background: var(--accent-teal);
+  color: #fff;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-teal:hover {
+  background: #15805e;
+  box-shadow: 0 0 16px rgba(29, 158, 117, 0.3);
+}
+
+.btn-teal:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+/* ========================================
+   Badges
+   ======================================== */
+.badge-viewer {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-indigo-light);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badge-admin {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald-light);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ========================================
+   Range Slider (Dark)
+   ======================================== */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
   height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #020617;
-}
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--slider-track, var(--bg-card-highest));
   border-radius: 3px;
+  outline: none;
 }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--slider-thumb, var(--accent-indigo));
+  cursor: pointer;
+  border: 2px solid var(--bg-base);
+  box-shadow: 0 0 6px var(--slider-thumb, var(--accent-indigo));
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--slider-thumb, var(--accent-indigo));
+  cursor: pointer;
+  border: 2px solid var(--bg-base);
+  box-shadow: 0 0 6px var(--slider-thumb, var(--accent-indigo));
+}
+
+/* ========================================
+   Scrollbar (Dark)
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-elevated);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-bright);
+  border-radius: 4px;
+  border: 2px solid var(--bg-elevated);
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--text-muted);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-scale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+/* ========================================
+   Utility Overrides
+   ======================================== */
+.text-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.divider {
+  border-top: 1px solid var(--border-subtle);
 }
