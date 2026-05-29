@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { isValidToken, extractToken } from '@/lib/auth';
 
-const SETTINGS_JSON_PATH = path.resolve('..', 'results', 'evaluation_settings_multiprompt.json');
+const SETTINGS_JSON_PATH = path.join(process.cwd(), 'data', 'results', 'evaluation_settings_multiprompt.json');
 
 const DEFAULT_METRICS = [
   {

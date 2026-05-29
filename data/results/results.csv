@@ -1,0 +1,139 @@
+timestamp,model,image_a_name,image_b_name,prompt,response,manual_score,notes
+20260526_171009,qwen,A_20260526_171009,B_20260526_171009,"You are analyzing two satellite images of the same geographic location taken at different times. Image 1 is BEFORE and Image 2 is AFTER.
+
+Describe in detail what changes have occurred. Focus on:
+1. Whether any change exists
+2. The location of changes within the image
+3. The type of change (e.g. new buildings, demolition, vegetation loss, flooding, road construction)
+
+Be specific and concise.","The satellite image shows a residential area before and after a significant change. Here are the changes observed:
+
+1. **Vegetation Loss**: The area surrounding the residential development has been cleared of vegetation. This is evident by the open spaces and the absence of trees and shrubs that were present in the image before the change.
+
+2. **Road Construction**: There is a new road construction site visible in the image. This is indicated by the presence of new road markings and the construction equipment in the area.
+
+3. **Building Demolition**: The image shows the remains of a building that was previously present in the area. This is visible as a large, dark area that appears to have been demolished.
+
+4. **Water Body**: There is a new body of water, likely a pond or a small lake, that has been created by the construction of the new road. This is indicated by the green area surrounding the water body.
+
+5. **Road Expansion**: The road has been widened and extended, as evidenced by the new road markings and the increased width of the road.
+
+6. **New Housing Development**: The residential area has been expanded with new houses. This is indicated by the increased number of houses and the new housing developments.
+
+7. **Urbanization**: The overall appearance of the area has changed from a natural landscape to a more developed and urbanized area.
+
+These changes suggest that the residential development has expanded, with new houses and infrastructure being built, while the surrounding vegetation has been cleared and new water bodies and roads have been created.",,
+20260526_171501,qwen,A_20260526_171501,B_20260526_171501,"You are a remote sensing analyst examining two satellite images
+of the same geographic area captured at different times.
+
+IMAGE 1 = BEFORE (earlier acquisition)
+IMAGE 2 = AFTER  (later acquisition)
+
+These are high-resolution overhead RGB images typical of urban or
+peri-urban environments. Common change types include: building construction,
+building demolition, road construction, parking lot changes, vegetation
+clearing, and flood or land-use change.
+
+Analyze the pair carefully and respond ONLY using the exact format below.
+Do not add any text outside these labeled fields.
+
+CHANGE_DETECTED: <yes / no / uncertain>
+CHANGE_TYPE: <one of: construction | demolition | road_change | vegetation_change | flood | land_use | no_change | uncertain>
+CHANGE_LOCATION: <describe where in the image — use compass directions and/or quadrants, e.g. ""northwest quadrant"", ""center-right"">
+CHANGE_EXTENT: <one of: minimal (<10% of image) | moderate (10–40%) | large (>40%)>
+DESCRIPTION: <2–4 sentences describing exactly what changed, what stayed the same, and any notable context>
+CONFIDENCE: <high / medium / low>","CHANGE_DETECTED: no_change
+CHANGE_TYPE: no_change
+CHANGE_LOCATION: center-right
+CHANGE_EXTENT: large
+DESCRIPTION: The image shows no change in the area between the two acquisitions. The residential development, forested areas, and road networks appear to be unchanged. The vegetation, buildings, and infrastructure remain consistent with no noticeable changes detected. The image is a high-resolution satellite image of an urban or peri-urban environment, and there are no visible signs of construction, demolition, road construction, parking lot changes, flood, or land-use change. The change detection is uncertain due to the lack of visible changes in the image.",,
+20260526_171910,qwen,A_20260526_171910,B_20260526_171910,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","CHANGE DETECTION REPORT
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a suburban area with residential houses, roads, and a small body of water. The AFTER image (IMAGE 2) shows a similar area with additional residential houses and a larger body of water. Therefore, there is a change in the area with the addition of new houses and a larger body of water.
+
+2. WHAT type of change occurred:
+   - The change is the addition of new houses and a larger body of water.
+
+3. WHERE the change is located:
+   - The change is located in the central part of the image, specifically in the area where the residential houses and the body of water were previously. The new houses and the larger body of water are located in the central part of the image, which is the same area as the residential houses and the body of water in the BEFORE image.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be relatively small compared to the whole image. The BEFORE image shows a larger area with more residential houses and a smaller body of water, while the AFTER image shows a smaller area with more houses and a larger body of water. The change is not significant enough to be considered a major change.
+
+5. WHAT remained unchanged:
+   - The vegetation, roads, and open land remain unchanged in both images. The same bodies of water and landmarks are visible in both images.
+
+SUMMARY:
+The BEFORE image (IMAGE 1) shows a suburban area with residential houses, roads, and a small body of water. The AFTER image (IMAGE 2) shows a similar area with additional residential houses and a larger body of water. The change is the addition of new houses and a larger body of water. The vegetation, roads, and open land remain unchanged. The change is relatively small and not significant enough to be considered a major change.",,
+20260526_221410,intern,A_20260526_221410,B_20260526_221410,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","### Change Detection Report
+
+#### 1. Change Occurrence
+A meaningful change has occurred in the geographic location between the BEFORE and AFTER images.
+
+#### 2. Type of Change
+The most prominent change is the clearance of vegetation in the central and eastern parts of the image. This area has been significantly cleared, revealing bare soil.
+
+#### 3. Location of Change
+The cleared area is located in the central and eastern parts of the image. It is situated roughly in the middle of the image, extending from the north to the south.
+
+#### 4. Size of Changed Area
+The cleared area appears to cover approximately one-third of the total image area.
+
+#### 5. Unchanged Features
+The following features remain unchanged:
+- The building in the northwest corner of the image.
+- The road running vertically through the image.
+- The patches of vegetation in the north and south corners.
+- The overall layout of the urban or peri-urban area, including the road network and building footprints.
+
+### Summary
+The central and eastern parts of the image have undergone significant land clearance, revealing bare soil. This change is substantial in size, covering about one-third of the image area. The rest of the features, including buildings, roads, and vegetation patches, remain unchanged.",,
+20260527_171024,qwen,A_20260527_171024,B_20260527_171024,"You are analyzing two satellite images of the same geographic location taken at different times. Image 1 is BEFORE and Image 2 is AFTER.
+
+Describe in detail what changes have occurred. Focus on:
+1. Whether any change exists
+2. The location of changes within the image
+3. The type of change (e.g. new buildings, demolition, vegetation loss, flooding, road construction)
+
+Be specific and concise.","The satellite image shows a change in the landscape between the two images. The most noticeable change is the presence of a new road or road construction site in the area where the forested area is now. This road appears to be a significant alteration in the natural landscape, indicating human activity and development. The road is visible as a straight, narrow path that cuts through the forest, suggesting that it has been constructed recently.",,

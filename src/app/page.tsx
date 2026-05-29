@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { useAuth } from '@/context/AuthContext';
-import { LoginPage } from '@/components/LoginPage';
+import { LandingPage } from '@/components/LandingPage';
+// trigger recompile
 import { ViewerDashboard } from '@/components/ViewerDashboard';
 import { AdminDashboard } from '@/components/AdminDashboard';
 
@@ -26,10 +27,8 @@ export default function Page() {
     );
   }
 
-
-  if (role === 'viewer') {
-    return <ViewerDashboard />;
-  }
-
-  return <AdminDashboard />;
+  if (role === 'viewer') return <ViewerDashboard />;
+  if (role === 'admin') return <AdminDashboard />;
+  
+  return <LandingPage />;
 }

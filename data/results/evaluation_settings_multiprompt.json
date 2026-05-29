@@ -1,0 +1,102 @@
+{
+  "metricsByPrompt": {
+    "P1": [
+      {
+        "id": "correctness",
+        "name": "Correctness",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": "Overall accuracy of the change detection response."
+      },
+      {
+        "id": "completeness",
+        "name": "Completeness",
+        "type": "scale",
+        "min": 1,
+        "max": 10,
+        "defaultValue": 5,
+        "description": "How well the response addressed all prompts (what, where, how large)."
+      },
+      {
+        "id": "metric_1780040652058",
+        "name": "New Metric",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": ""
+      },
+      {
+        "id": "metric_1780040661116",
+        "name": "New Metric",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": ""
+      }
+    ],
+    "P2": [
+      {
+        "id": "correctness",
+        "name": "Correctness",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": "Overall accuracy of the change detection response."
+      },
+      {
+        "id": "completeness",
+        "name": "Completeness",
+        "type": "scale",
+        "min": 1,
+        "max": 10,
+        "defaultValue": 5,
+        "description": "How well the response addressed all prompts (what, where, how large)."
+      }
+    ],
+    "P3": [
+      {
+        "id": "correctness",
+        "name": "Correctness",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": "Overall accuracy of the change detection response."
+      },
+      {
+        "id": "completeness",
+        "name": "Completeness",
+        "type": "scale",
+        "min": 1,
+        "max": 10,
+        "defaultValue": 5,
+        "description": "How well the response addressed all prompts (what, where, how large)."
+      }
+    ],
+    "P4": [
+      {
+        "id": "correctness",
+        "name": "Correctness",
+        "type": "scale",
+        "min": 1,
+        "max": 5,
+        "defaultValue": 3,
+        "description": "Overall accuracy of the change detection response."
+      },
+      {
+        "id": "completeness",
+        "name": "Completeness",
+        "type": "scale",
+        "min": 1,
+        "max": 10,
+        "defaultValue": 5,
+        "description": "How well the response addressed all prompts (what, where, how large)."
+      }
+    ]
+  }
+}

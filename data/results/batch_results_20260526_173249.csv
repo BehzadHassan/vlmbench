@@ -1,0 +1,2028 @@
+timestamp,model,image_a_name,image_b_name,prompt,response,manual_score,notes
+20260526_173249,qwen2-vl-2b,val_1_A,val_1_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of open land, vegetation, and a few structures. The AFTER image (IMAGE 2) shows a similar area with a significant change in vegetation cover. The vegetation in IMAGE 2 appears denser and more uniform than in IMAGE 1, indicating that there has been a change in the vegetation cover.
+
+The change is located in the center of the image, specifically in the area where the vegetation cover has increased. The change appears to be a result of urban expansion, as evidenced by the new buildings and roads visible in the AFTER image.
+
+The change is relatively large, covering a significant portion of the image, from the center to the right side. The vegetation cover has increased by about 50% in this area.
+
+The vegetation cover in IMAGE 1 was more dispersed and varied, with patches of open land and scattered trees. In IMAGE 2, the vegetation cover is more uniform and dense, with fewer open areas.
+
+The change in vegetation cover is the only significant change observed in the image. There are no other notable changes such as new building footprints, road widening, or flooding. The change is also not due to natural processes like flooding or land clearance, as there are no visible signs of water bodies or land clearing in the image.
+
+In summary, the change in vegetation cover is a meaningful change that occurred in the peri-urban area between the BEFORE and AFTER images. The change is located in the center of the image, covering a significant portion of the vegetation cover. The change is relatively large, covering a 50% increase in vegetation cover. The change is the only significant change observed in the image, and there are no other notable changes.",,
+20260526_173249,qwen2-vl-2b,val_10_A,val_10_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with a mix of residential houses, roads, and greenery. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged, as there are no significant differences in the overall layout or appearance of the houses, roads, or vegetation.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is most likely related to the construction of new houses. The addition of new houses and the expansion of the existing houses suggest that there has been some development in the area.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the central part of the image, specifically in the area where the new houses are being built.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a specific portion of the image, but it is significant enough to be noticeable.
+
+5. **What remained unchanged**: The vegetation, roads, and overall layout of the houses and roads appear to be unchanged. The only noticeable change is the addition of new houses.
+
+In summary, the scene remains unchanged, with the only noticeable change being the construction of new houses in the central part of the image.",,
+20260526_173249,qwen2-vl-2b,val_11_A,val_11_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with scattered houses, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears unchanged between the two images. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the images.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is not located in any specific area. The change appears to be uniform across the entire image.
+
+4. **How large the changed area appears relative to the whole image**: The changed area appears to be very small, as it is a very small portion of the image. The entire image is unchanged.
+
+5. **What remained unchanged**: The entire image remains unchanged. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+In summary, the scene is unchanged between the two images.",,
+20260526_173249,qwen2-vl-2b,val_12_A,val_12_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial structures, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with the addition of new residential buildings and a road widening.
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged): The change is a new residential development. The BEFORE image shows a mix of residential and commercial structures, while the AFTER image shows a significant increase in residential buildings.
+
+2. WHAT type of change occurred: The change is new building footprints. The BEFORE image shows a mix of existing structures, while the AFTER image shows new buildings.
+
+3. WHERE the change is located: The change is located in the center of the image, specifically in the area where the new residential buildings are located.
+
+4. HOW LARGE the changed area appears relative to the whole image: The changed area appears to be relatively small, as it is a small portion of the image.
+
+5. WHAT remained unchanged: The vegetation, roads, and open land remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_13_A,val_13_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial structures, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with only minor differences in the appearance of some structures and roads.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily related to the addition of new buildings and the widening of roads. There is no clear evidence of demolition, vegetation loss, flooding, or land clearance.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the central part of the image, specifically in the area where new buildings and roads have been added.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not a significant portion of the entire image.
+
+5. **What remained unchanged**: The vegetation, roads, and some structures remain unchanged. The residential and commercial buildings, as well as the roads, appear to be in the same relative positions as in IMAGE 1.
+
+In summary, the change in IMAGE 2 is primarily related to the addition of new buildings and the widening of roads, with no significant changes in the overall scene.",,
+20260526_173249,qwen2-vl-2b,val_14_A,val_14_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a small, scattered settlement of houses and buildings in a forested area. The AFTER image (IMAGE 2) shows a larger, more densely populated settlement with more houses and buildings. The change is a significant increase in the number of structures and the overall density of the settlement.
+
+The change occurred in the area between the two images, which is marked by the expansion of the settlement. The roads and vegetation appear to have remained relatively unchanged, with the exception of the increased density of the settlement.
+
+The change is located in the central part of the image, between the two images. The settlement appears to have expanded outward, filling in the previously empty areas.
+
+The change is relatively small, as the settlement is still relatively small in comparison to the whole image. The vegetation and roads appear to have remained relatively unchanged, with the exception of the increased density of the settlement.
+
+The change is not a significant one, as the settlement has expanded but not to the point of becoming a major urban area. The vegetation and roads appear to have remained relatively unchanged, with the exception of the increased density of the settlement.
+
+The change is not a flooding event, as there is no visible water body in the image. The change is not a land clearance event, as there is no visible evidence of clearing of land. The change is not a road widening event, as there is no visible evidence of widening of roads. The change is not a new building footprints event, as there is no visible evidence of new building footprints.
+
+The change is not a demolition event, as there is no visible evidence of demolition. The change is not a vegetation loss event, as there is no visible evidence of vegetation loss. The change is not a flooding event, as there is no visible evidence of flooding. The change is not a land clearance event, as there is no visible evidence of land clearance. The change is not a new building footprints event, as there is no visible evidence of new building footprints.",,
+20260526_173249,qwen2-vl-2b,val_15_A,val_15_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of open land, vegetation, and a few scattered buildings. The AFTER image (IMAGE 2) shows a similar area with a significant increase in the number of buildings and a more developed infrastructure. The vegetation appears to have been cleared or modified, and the roads have been widened or new roads have been added.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is significant and noticeable. The BEFORE image shows a relatively undeveloped area, while the AFTER image shows a densely built-up area with numerous buildings.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is a land clearance and development. The vegetation has been cleared, and new buildings have been constructed.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the center of the image, specifically in the area where the vegetation has been cleared and new buildings have been constructed.
+
+4. **How large the changed area appears relative to the whole image**: The changed area appears to be a significant portion of the image, covering a large area from the center to the edges.
+
+5. **What remained unchanged**: The vegetation, roads, and some buildings appear to remain unchanged. The open land and the overall layout of the area seem to be similar in both images.",,
+20260526_173249,qwen2-vl-2b,val_16_A,val_16_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with a significant change in the landscape. The most noticeable change is the presence of a large parking lot and commercial building in the center of the image. This building appears to be a new construction project, as it is not present in the BEFORE image.
+
+The change occurred in the area between the two buildings, which is approximately 100 meters wide and 200 meters long. The change is relatively small in terms of area, but it is significant in terms of the presence of new infrastructure.
+
+The vegetation and open land appear to be unchanged, as there are no visible differences in the vegetation coverage or the layout of the roads and buildings. The water bodies, such as the pond and the lake, also appear to be unchanged.
+
+The change in the image is most likely due to the construction of the new building and parking lot. The new building and parking lot are located in an area that was previously open land or vegetation, and the change in the landscape is a result of the construction activity.",,
+20260526_173249,qwen2-vl-2b,val_17_A,val_17_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, roads, and green spaces. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes:
+
+1. ** WHETHER a meaningful change occurred (or if the scene is unchanged):**
+   - The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged.
+
+2. ** WHAT type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance):**
+   - The change is a combination of new building footprints and road widening.
+
+3. ** WHERE the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image):**
+   - The change is located in the central part of the image, specifically in the area where new building footprints and road widening are visible.
+
+4. ** HOW LARGE the changed area appears relative to the whole image:**
+   - The changed area appears to be relatively small, occupying a specific portion of the image.
+
+5. ** WHAT remained unchanged:**
+   - The residential houses, roads, and green spaces remain unchanged.
+
+**Summary:**
+The scene remains largely unchanged, with some new building footprints and road widening being the only noticeable changes. The change is not significant enough to be considered a meaningful change.",,
+20260526_173249,qwen2-vl-2b,val_18_A,val_18_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a dense forested area with a few scattered buildings and roads. The AFTER image (IMAGE 2) shows a more developed area with numerous residential buildings, roads, and a road widening project. The change is the addition of new residential buildings and the widening of a road.
+
+1. A meaningful change occurred.
+2. The change is a new building footprints.
+3. The change is located in the center of the image, between the forested area and the developed area.
+4. The change appears to be relatively small, as it is only a small section of the image.
+5. The forested area remains unchanged, with no visible changes to the vegetation or open land.",,
+20260526_173249,qwen2-vl-2b,val_19_A,val_19_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by a dense forest of trees, with some open land and patches of bare ground. There are also some roads and buildings visible, including a small residential area with houses and a road.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most significant change is the presence of a new road that has been constructed in the area. This road is visible as a straight, white line running through the image. The road appears to be a major thoroughfare, as it is wider and more prominent than the existing roads in the image.
+
+The new road is located in the center of the image, running from the left side to the right side. It is surrounded by the forested area, and there are no visible signs of vegetation loss or land clearance in the vicinity of the road.
+
+The change in the image is a new road construction, which has resulted in a noticeable change in the landscape. The road has been constructed in an area that was previously forested, and it has opened up the area for development and transportation.
+
+The change is located in the center of the image, with the new road running through the middle. The road is approximately 100 meters wide and appears to be a major thoroughfare, as it is wider and more prominent than the existing roads in the image.
+
+The size of the changed area is relatively small, as it is only a single road. However, the change is significant because it has opened up the area for development and transportation, and it has resulted in a noticeable change in the landscape.
+
+The vegetation in the image remains largely unchanged, with the forested area still present. The open land and patches of bare ground are also similar in appearance to the BEFORE image.
+
+In summary, the BEFORE image shows a peri-urban area with a dense forest and some open land and patches of bare ground. The AFTER image shows a new road construction in the area, which has resulted in a noticeable change in the landscape. The change is located in the center of the image, with the new road running through the middle. The size of the changed area is relatively small, but the change is significant because it has opened up the area for development and transportation. The vegetation in the image remains largely unchanged, and the open land and patches of bare ground are also similar in appearance to the BEFORE image.",,
+20260526_173249,qwen2-vl-2b,val_2_A,val_2_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with the exception of a few new building footprints and a road widening.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily new building footprints. There is no visible demolition, road widening, vegetation loss, flooding, or land clearance.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the center of the image, specifically in the area where new building footprints are visible.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a specific portion of the image. It is not a significant portion of the entire image.
+
+5. **What remained unchanged**: The vegetation, roads, and residential buildings remain unchanged. The only noticeable change is the new building footprints.
+
+In summary, the change detected in the image is a new building footprints, which is a minor change that does not significantly alter the overall scene.",,
+20260526_173249,qwen2-vl-2b,val_20_A,val_20_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and undeveloped land. The AFTER image (IMAGE 2) shows a similar area with a significant change in the development of the area.
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged): The change is not significant enough to be considered a meaningful change. The image shows a small area of new development, but it is not extensive enough to be considered a major change.
+
+2. WHAT type of change occurred: The change is the addition of new buildings and infrastructure in the form of roads and parking lots. This indicates development.
+
+3. WHERE the change is located: The change is located in the central part of the image, specifically in the area where the new buildings and infrastructure are being constructed.
+
+4. HOW LARGE the changed area appears relative to the whole image: The changed area is relatively small, occupying a small portion of the image. It is not large enough to be considered a significant change.
+
+5. WHAT remained unchanged: The vegetation, open land, and water bodies remain unchanged. The roads and parking lots are new constructions, but the vegetation and open land are the same as in the BEFORE image.",,
+20260526_173249,qwen2-vl-2b,val_21_A,val_21_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, streets, and some green spaces. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears unchanged between the two images. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily in the vegetation. The green spaces in IMAGE 1 have been replaced with open land and patches of bare ground in IMAGE 2.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the open land and bare ground areas between the houses in IMAGE 1 and the green spaces in IMAGE 2.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not a significant change in the overall scene.
+
+5. **What remained unchanged**: The houses, streets, and green spaces remain unchanged. The roads and vegetation in the green spaces are also unchanged.
+
+In summary, the scene is unchanged between the two images, with the only noticeable change being the replacement of green spaces with open land and bare ground.",,
+20260526_173249,qwen2-vl-2b,val_22_A,val_22_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, roads, and open land. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears unchanged between the two images. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the images.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the open land area between the residential houses. There are no visible landmarks in the image that can be used to determine the exact location of the change.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not large enough to be considered a significant change.
+
+5. **What remained unchanged**: The residential houses, roads, and open land appear unchanged between the two images. There are no visible changes in the vegetation, water bodies, or other features of the scene.
+
+In summary, the scene remains unchanged between the two images, with no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible. The change is limited to the open land area between the residential houses.",,
+20260526_173249,qwen2-vl-2b,val_23_A,val_23_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of open land, vegetation, and a small body of water. The AFTER image (IMAGE 2) shows a similar area with a significant change in the vegetation cover. The vegetation in IMAGE 2 appears denser and more uniform than in IMAGE 1, indicating that there has been a change in the vegetation cover.
+
+The change is located in the center of the image, specifically in the area where the vegetation cover has increased. The vegetation cover has expanded from a small patch in IMAGE 1 to a larger area in IMAGE 2. The change appears to be a result of land clearing or urban expansion, as the vegetation cover has been cleared and replaced with a more uniform and dense vegetation.
+
+The change is relatively small in terms of the whole image, as the vegetation cover in IMAGE 2 is still relatively small compared to the entire image. However, the change is significant in terms of the area affected, as it has expanded from a small patch in IMAGE 1 to a larger area in IMAGE 2.
+
+The vegetation cover in IMAGE 2 remains unchanged in terms of the overall area, but the density and uniformity of the vegetation have increased. The change is not visible in the image, but it is evident from the difference in the vegetation cover between the two images.
+
+In summary, the change in the vegetation cover between the BEFORE and AFTER images is a result of land clearing or urban expansion, and it has occurred in the center of the image, specifically in the area where the vegetation cover has increased. The change is relatively small in terms of the whole image, but it is significant in terms of the area affected.",,
+20260526_173249,qwen2-vl-2b,val_24_A,val_24_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of agricultural land, open fields, and a few scattered buildings. The AFTER image (IMAGE 2) shows a significant change in the area. The most noticeable change is the construction of a large residential development, including multiple houses and a school. The residential area has been built on the previously open land, and the roads have been widened to accommodate the new development. The vegetation and open land have been cleared to make way for the new construction. The change is centered around the residential development, with the residential area expanding towards the center of the image. The roads have been widened to accommodate the increased traffic, and the construction site is visible in the middle of the image. The change is relatively large, covering a significant portion of the image. The agricultural land and open fields remain unchanged, and there is no visible flooding or other environmental changes.",,
+20260526_173249,qwen2-vl-2b,val_25_A,val_25_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a small, rural area with a few buildings, roads, and open land. The AFTER image (IMAGE 2) shows a larger, more developed area with a large commercial building, a parking lot, and additional buildings. The change is the addition of a large commercial building and the expansion of the parking lot.
+
+1. A meaningful change occurred.
+2. The change is a new building footprints.
+3. The change is located in the center of the image, between the two roads.
+4. The changed area appears to be about 100 meters wide and 200 meters long.
+5. The change is not visible in the BEFORE image, as it is a new addition to the scene.",,
+20260526_173249,qwen2-vl-2b,val_26_A,val_26_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of agricultural land, open spaces, and a few scattered trees. The AFTER image (IMAGE 2) shows a similar area with a significant change in the landscape. The most noticeable change is the presence of a new road or highway running through the center of the image. This road has replaced the existing road or highway, which is no longer visible in IMAGE 2. The new road has also widened and appears to be more prominent than the old road. The vegetation and open spaces in the area have been cleared or modified, and the overall appearance of the landscape has changed significantly. The new road has also altered the flow of traffic and the connectivity between different parts of the area.",,
+20260526_173249,qwen2-vl-2b,val_27_A,val_27_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The change detection report for the two satellite images is as follows:
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a large, rectangular area with a series of smaller, rectangular patches. The AFTER image (IMAGE 2) shows a similar rectangular area, but with additional smaller patches and a more complex road network. There is no significant change in the overall shape or size of the area.
+
+2. WHAT type of change occurred:
+   - The change is a new building footprint. The AFTER image shows a new building structure that has been constructed on the previously empty area.
+
+3. WHERE the change is located:
+   - The change is located in the central part of the image, specifically in the area with the new building footprint.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be relatively small, occupying a small portion of the image. It is approximately 1/10th of the total image area.
+
+5. WHAT remained unchanged:
+   - The vegetation, open land, and water bodies remain unchanged in both images. The roads and other infrastructure also appear to be unchanged.
+
+In summary, there is no meaningful change in the scene between the BEFORE and AFTER images. The change is a new building footprint, located in the central part of the image.",,
+20260526_173249,qwen2-vl-2b,val_28_A,val_28_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The change detection report for the two satellite images is as follows:
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a small body of water with some vegetation and a road nearby. The AFTER image (IMAGE 2) shows a larger body of water with more vegetation and a road that has widened. Therefore, there is a meaningful change.
+
+2. WHAT type of change occurred:
+   - The change is an increase in the size of the water body and the amount of vegetation.
+
+3. WHERE the change is located:
+   - The change is located in the center of the image, specifically in the area where the road has widened.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be about 10% of the whole image.
+
+5. WHAT remained unchanged:
+   - The vegetation, road, and surrounding areas remain unchanged in both images.
+
+The change is a result of the widening of the road, which has increased the size of the water body and the amount of vegetation in the area.",,
+20260526_173249,qwen2-vl-2b,val_29_A,val_29_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban neighborhood with a mix of single-family homes and a few larger structures. The AFTER image (IMAGE 2) shows a similar neighborhood, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The neighborhood appears to be unchanged overall, with no major structural changes or new developments visible.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily in the form of new building footprints. There are several new structures that have been built in the neighborhood, including larger homes and possibly some commercial buildings.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the western part of the neighborhood, specifically in the area where the new structures have been built.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a specific portion of the neighborhood. It is not a significant portion of the entire image.
+
+5. **What remained unchanged**: The vegetation, open land, and water bodies remain unchanged. The roads, buildings, and other features of the neighborhood appear to be the same as in IMAGE 1.
+
+In summary, the change detected in IMAGE 2 is the addition of new building footprints in the western part of the neighborhood, without any major structural changes or new developments.",,
+20260526_173249,qwen2-vl-2b,val_3_A,val_3_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The change detection report for the two satellite images is as follows:
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a peri-urban area with scattered trees and open land. The AFTER image (IMAGE 2) shows a similar area with new residential buildings and roads. Therefore, there is a meaningful change.
+
+2. WHAT type of change occurred:
+   - The change is the addition of new residential buildings and roads.
+
+3. WHERE the change is located:
+   - The change is located in the center of the image, specifically in the area where the residential buildings and roads are newly constructed.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be relatively small, as it is a small portion of the image.
+
+5. WHAT remained unchanged:
+   - The vegetation, open land, and water bodies remain unchanged.
+
+The change detection report indicates that there is a meaningful change in the image, specifically the addition of new residential buildings and roads. The change is located in the center of the image, and the changed area is relatively small. The vegetation, open land, and water bodies remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_30_A,val_30_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","REPORT ON CHANGE DETECTION IN THE IMAGE
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+2. WHAT type of change occurred:
+   - The change is a land clearance or urban expansion.
+   - The BEFORE image shows a small area of open land near the center of the image, while the AFTER image shows a larger area of open land that has been cleared and is now bare.
+
+3. WHERE the change is located:
+   - The change is located in the central part of the image, specifically in the area between the two roads and the river.
+   - The BEFORE image shows a small patch of open land near the center, while the AFTER image shows a larger area of open land that has been cleared.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area is relatively small, occupying a small portion of the image.
+   - The BEFORE image shows a small area of open land, while the AFTER image shows a larger area of open land that has been cleared.
+
+5. WHAT remained unchanged:
+   - The BEFORE image shows a small patch of open land near the center, while the AFTER image shows a similar patch of open land.
+   - The BEFORE image shows a small patch of vegetation near the center, while the AFTER image shows a similar patch of vegetation.
+
+CONCLUSION:
+The change in the image is a land clearance or urban expansion, with a small area of open land being cleared and turned into a larger area of open land. The change is located in the central part of the image, between the two roads and the river. The BEFORE image shows a small patch of open land, while the AFTER image shows a larger area of open land that has been cleared. The BEFORE image shows a small patch of vegetation near the center, while the AFTER image shows a similar patch of vegetation.",,
+20260526_173249,qwen2-vl-2b,val_31_A,val_31_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of agricultural fields, open land, and scattered vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged): The change is not significant enough to be considered meaningful. The scene remains largely unchanged, with only minor differences in the appearance of some vegetation and the layout of the fields.
+
+2. WHAT type of change occurred: The change is a small-scale, localized change in the vegetation. There is no clear indication of new building footprints, road widening, flooding, or land clearance.
+
+3. WHERE the change is located: The change is located in the center of the image, specifically in the area where the vegetation appears to have been cleared or modified.
+
+4. HOW LARGE the changed area appears relative to the whole image: The changed area is relatively small, occupying a small portion of the image. It is not large enough to be considered a significant change.
+
+5. WHAT remained unchanged: The vegetation, roads, and other features in the image remain largely unchanged. The agricultural fields, open land, and scattered vegetation are still present in the same locations as in IMAGE 1.
+
+In summary, the scene remains unchanged, with only minor differences in the appearance of some vegetation and the layout of the fields. The change is a localized modification in the vegetation, which is not considered significant enough to be considered a meaningful change.",,
+20260526_173249,qwen2-vl-2b,val_32_A,val_32_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","REPORT ON CHANGE DETECTION IN TWO HIGH-RESOLUTION RGB IMAGES
+
+Image 1 (Before): This image shows a peri-urban area with a mix of agricultural fields, roads, and water bodies. The fields are arranged in a grid pattern, and there are no visible changes in the vegetation, roads, or water bodies. The image appears to be taken from an aerial perspective, providing a comprehensive view of the area.
+
+Image 2 (After): This image shows a similar peri-urban area, but with some noticeable changes. The agricultural fields appear to have been cleared or replanted, resulting in a more open landscape. The roads and water bodies remain unchanged, but the overall appearance of the area has been altered.
+
+Change Type: The change detected in Image 2 is the clearing or replanting of agricultural fields, which has resulted in a more open landscape compared to Image 1.
+
+Location: The change is located in the central part of the image, specifically in the area where the agricultural fields were previously.
+
+Size: The changed area appears to be relatively small, covering a small portion of the image.
+
+Unchanged Elements: The vegetation, roads, and water bodies remain unchanged in both images.
+
+Conclusion: The change detected in Image 2 is a clear indication of land use change, specifically the clearing or replanting of agricultural fields. This change has resulted in a more open landscape compared to the original image.",,
+20260526_173249,qwen2-vl-2b,val_33_A,val_33_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of agricultural fields, roads, and buildings. The AFTER image (IMAGE 2) shows a similar area with a new track and a large building structure, indicating a significant change.
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged): The change is meaningful. The new track and building structure are clearly visible in IMAGE 2.
+
+2. WHAT type of change occurred: The change is a construction or development activity. The new track and building structure suggest that the area has been developed or redeveloped.
+
+3. WHERE the change is located: The change is located in the center of the image, specifically in the area where the new track and building structure are located.
+
+4. HOW LARGE the changed area appears relative to the whole image: The changed area is relatively small, occupying a small portion of the image.
+
+5. WHAT remained unchanged: The agricultural fields, roads, and buildings remain unchanged in IMAGE 1 and IMAGE 2.",,
+20260526_173249,qwen2-vl-2b,val_34_A,val_34_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and open land. The AFTER image (IMAGE 2) shows a similar area but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with the exception of the vegetation and road changes.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The vegetation loss and road widening are the most notable changes. There are no new building footprints, demolition, or land clearance visible in the image.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The vegetation loss is located in the center of the image, near the residential buildings. The road widening is visible on the right side of the image, near the open land.
+
+4. **How large the changed area appears relative to the whole image**: The vegetation loss is a small area, approximately 10% of the image's area. The road widening is a larger area, approximately 20% of the image's area.
+
+5. **What remained unchanged**: The residential buildings, roads, and open land remain unchanged in both images. The vegetation loss and road widening are the only changes observed.
+
+In summary, the scene remains largely unchanged, with the exception of the vegetation loss and road widening.",,
+20260526_173249,qwen2-vl-2b,val_35_A,val_35_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a small, densely populated urban area with numerous residential buildings, roads, and a small cemetery. The AFTER image (IMAGE 2) shows a similar area but with some noticeable changes:
+
+1. ** WHETHER a meaningful change occurred (or if the scene is unchanged):** The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with the same general layout and structures present.
+
+2. ** WHAT type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance):** The change is primarily the addition of a large, open area in the center of the image. This area appears to be cleared of vegetation and could be a new development site or a large park.
+
+3. ** WHERE the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image):** The change is located in the center of the image, occupying a significant portion of the area. The change is not visible in the corners or along the edges of the image.
+
+4. ** HOW LARGE the changed area appears relative to the whole image:** The changed area is relatively large, occupying a significant portion of the image. It is larger than the surrounding residential and cemetery areas but smaller than the entire image.
+
+5. ** WHAT remained unchanged:** The residential buildings, roads, and cemetery remain unchanged. The vegetation and open land in the center of the image are also unchanged.
+
+In summary, the change in IMAGE 2 is the addition of a large, open area in the center of the image, which appears to be a new development site or a large park. The scene remains largely unchanged overall.",,
+20260526_173249,qwen2-vl-2b,val_36_A,val_36_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by large, rectangular fields that appear to be agricultural land. There are also some scattered buildings and structures, as well as a few small roads and pathways.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most significant change is the presence of a new building complex in the center of the image. This building complex appears to be a residential area with multiple houses and possibly some commercial buildings as well. The new building complex is located in the middle of the image, occupying a significant portion of the area.
+
+The change in the AFTER image is the addition of a new building complex, which is not present in the BEFORE image. The new building complex is located in the center of the image, and it appears to be a significant change in the area's land use.
+
+The BEFORE image shows a relatively flat and open landscape with no significant changes. The AFTER image shows a more developed area with a new building complex, indicating a change in land use.
+
+The change in the AFTER image is the addition of a new building complex, which is located in the center of the image. The change is relatively small in size compared to the whole image, but it is a significant change in the area's land use.
+
+The BEFORE image shows a peri-urban area with large, rectangular fields, scattered buildings, and a few roads. The AFTER image shows a similar area with a new building complex, indicating a change in land use. The change is relatively small in size, but it is a significant change in the area's land use.",,
+20260526_173249,qwen2-vl-2b,val_37_A,val_37_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, streets, and a small park. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears unchanged between the two images. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the images.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is not located in any specific area. The change appears to be uniform across the entire image.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is not large relative to the whole image. The change is not noticeable and does not occupy a significant portion of the image.
+
+5. **What remained unchanged**: The scene remains unchanged. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance.
+
+In summary, the scene is unchanged between the two images.",,
+20260526_173249,qwen2-vl-2b,val_38_A,val_38_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, roads, and some open land. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance in the AFTER image that are not also present in the BEFORE image.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the AFTER image that are not also present in the BEFORE image.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the residential area, specifically in the vicinity of the roads and houses. There are no visible landmarks that can be used to determine the exact location of the change.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, as it is a small portion of the residential area. The BEFORE image shows a larger area, and the AFTER image shows a smaller area, indicating that the change is localized.
+
+5. **What remained unchanged**: The residential houses, roads, and open land remain unchanged in both images. The vegetation and water bodies are also unchanged.
+
+In summary, the scene is unchanged between the BEFORE and AFTER images. The only noticeable change is the presence of a small, localized area in the residential area that appears to be a new building footprint.",,
+20260526_173249,qwen2-vl-2b,val_39_A,val_39_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with residential buildings, roads, and open land. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with the exception of some minor differences in the appearance of the buildings and the roads.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily related to the appearance of the buildings and the roads. There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the images.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the area between the residential buildings and the open land. The roads and buildings appear to have shifted slightly, indicating a minor change.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not a significant change in the overall scene.
+
+5. **What remained unchanged**: The vegetation, open land, and water bodies remain unchanged in both images. The roads and buildings also appear to remain unchanged.
+
+In summary, the change detected in IMAGE 2 is minor and not significant enough to be considered a meaningful change. The scene remains largely unchanged, with some minor differences in the appearance of the buildings and the roads.",,
+20260526_173249,qwen2-vl-2b,val_4_A,val_4_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","CHANGE DETECTION REPORT
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of open land, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+2. WHAT type of change occurred:
+   - The change is a road widening.
+   - The BEFORE image shows a single road that runs through the area, while the AFTER image shows a wider road that has been constructed.
+
+3. WHERE the change is located:
+   - The change is located in the middle of the image, specifically in the area where the road has been widened.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be relatively small, as it is a single road widening.
+
+5. WHAT remained unchanged:
+   - The vegetation, open land, and roads remain unchanged in the BEFORE and AFTER images.
+
+SUMMARY:
+The BEFORE image shows a peri-urban area with a single road, while the AFTER image shows a wider road that has been constructed. The change is a road widening, which appears to be relatively small in the context of the whole image. The vegetation, open land, and roads remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_40_A,val_40_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and open land. The AFTER image (IMAGE 2) shows a similar area with a few noticeable changes:
+
+1. ** WHETHER a meaningful change occurred (or if the scene is unchanged):** The change is not significant. The overall layout and structure of the buildings, roads, and vegetation appear to be largely unchanged.
+
+2. ** WHAT type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance):** The change is primarily in the form of new building footprints. There are several new structures that have been built in the area, including residential homes and possibly commercial buildings.
+
+3. ** WHERE the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image):** The change is located in the central part of the image, specifically in the area where the new buildings are situated.
+
+4. ** HOW LARGE the changed area appears relative to the whole image:** The changed area is relatively small, occupying a specific portion of the image. It is not a significant portion of the entire image.
+
+5. ** WHAT remained unchanged:** The vegetation, open land, and roads appear to be largely unchanged. The residential buildings and roads are the only significant changes.
+
+In summary, the change detected in the image is the addition of new building footprints, with the rest of the scene remaining largely unchanged.",,
+20260526_173249,qwen2-vl-2b,val_41_A,val_41_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a rural area with a few scattered buildings, a small farm, and some open land. The AFTER image (IMAGE 2) shows a significant change in the area. The buildings and farm have been demolished, and the land has been cleared for new development. The roads and vegetation appear to be unchanged.
+
+The change is located in the center of the image, with the cleared area occupying a significant portion of the image. The change appears to be quite large, covering a substantial area of the image.
+
+The vegetation and open land remain unchanged, with no new vegetation or open land added to the image. The roads and buildings are also unchanged, with no new roads or buildings added to the image.
+
+The change is a clear example of urbanization, with the demolition of buildings and the clearing of land for new development.",,
+20260526_173249,qwen2-vl-2b,val_42_A,val_42_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a small, rural community with a few scattered houses and a small pond. The AFTER image (IMAGE 2) shows a significant change in the community. The houses have been replaced by larger, more modern buildings, and the community has expanded outward. The pond has been filled in, and the area around the community has been cleared of vegetation. The change is most noticeable in the northwestern corner of the image, where the community has grown and the vegetation has been cleared. The change is also visible in the southeastern corner, where the community has expanded outward. The change is not as noticeable in the central and eastern parts of the image, where the community remains relatively unchanged. The change is not as noticeable in the western part of the image, where the community remains relatively unchanged. The change is not as noticeable in the northwestern part of the image, where the community has grown and the vegetation has been cleared. The change is not as noticeable in the southeastern part of the image, where the community has expanded outward. The change is not as noticeable in the central part of the image, where the community remains relatively unchanged. The change is not as noticeable in the eastern part of the image, where the community remains relatively unchanged. The change is not as noticeable in the western part of the image, where the community has grown and the vegetation has been cleared. The change is not as noticeable in the northwestern part of the image, where the community has grown and the vegetation has been cleared. The change is not as noticeable in the southeastern part of the image, where the community has expanded outward. The change is not as noticeable in the central part of the image, where the community remains relatively unchanged. The change is not as noticeable in the eastern part of the image, where the community remains relatively unchanged. The change is not as noticeable in the western part of the image, where the community has grown and the vegetation has been cleared. The change is not as noticeable in the northwestern part of the image, where the community has grown and the vegetation has been cleared. The change is not as noticeable in the southeastern part of the image, where the community has expanded outward. The change is not as noticeable in the central part of the image, where the community remains relatively unchanged. The change is not as noticeable in the eastern part of the image, where the community remains relatively unchanged. The change is not as noticeable in the western part of the image, where the community has grown and the vegetation has been cleared",,
+20260526_173249,qwen2-vl-2b,val_43_A,val_43_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a rural or peri-urban area with scattered buildings, roads, and open land. The AFTER image (IMAGE 2) shows a suburban area with numerous residential buildings, roads, and a more developed landscape. 
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is evident in the transition from a rural to a suburban area. The presence of numerous residential buildings, roads, and a more developed infrastructure in IMAGE 2 indicates a significant change from the rural setting in IMAGE 1.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is a transition from a rural to a suburban area. The residential buildings, roads, and other infrastructure are new features in IMAGE 2.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the transition area between the rural and suburban areas. The roads and residential buildings are more prominent in the suburban area, while the open land and scattered buildings are more noticeable in the rural area.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small compared to the whole image. The suburban area is more developed and covers a larger portion of the image, while the rural area remains more dispersed.
+
+5. **What remained unchanged**: The vegetation, open land, and some scattered buildings in the rural area remain unchanged. The roads and residential buildings in the suburban area are new features that have been added since the transition from rural to suburban.",,
+20260526_173249,qwen2-vl-2b,val_44_A,val_44_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of agricultural fields, open land, and a few scattered trees. The AFTER image (IMAGE 2) shows a similar area, but with a noticeable change in the vegetation. The trees in IMAGE 1 are sparse and scattered, while in IMAGE 2, they appear to be more densely clustered and larger in size. This suggests that there has been some form of vegetation management or expansion in the area.
+
+The change is located in the center of the image, specifically in the area where the trees have grown larger and more numerous. The change appears to be significant, as the trees in IMAGE 2 are much larger and more numerous than those in IMAGE 1.
+
+The change in vegetation appears to be the primary change, with no other significant changes observed in the image. The roads, structures, and open land remain unchanged.
+
+The change in vegetation appears to be a result of some form of land management or expansion, such as tree planting or clearing. The change is relatively small in size, as it only affects a small portion of the image.",,
+20260526_173249,qwen2-vl-2b,val_45_A,val_45_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The satellite images show a change in the landscape of an urban or peri-urban area over time. The BEFORE image (IMAGE 1) shows a dense forest with a road running through it, while the AFTER image (IMAGE 2) shows a similar forest but with a new building footprint added to the right side of the road. The change is a new building footprint that has been added to the right side of the road.
+
+The change is located in the northwestern corner of the image, specifically in the area where the new building footprint is located. The change appears to be relatively small, as it is only a single building footprint.
+
+The vegetation in the image remains largely unchanged, with the forest continuing to dominate the landscape. The road and the new building footprint are the only significant changes observed in the image.
+
+The change in the image is a new building footprint that has been added to the right side of the road. This indicates that the area has been developed or expanded, potentially for residential or commercial purposes.",,
+20260526_173249,qwen2-vl-2b,val_46_A,val_46_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by open land, patches of vegetation, and a few small bodies of water. There are no significant structures or roads visible in the image.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most notable change is the presence of a large, triangular-shaped structure in the center of the image. This structure appears to be a new building or facility, as it is distinct from the existing urban and rural features.
+
+The change is located in the center of the image, approximately in the middle of the triangle-shaped structure. The structure is surrounded by open land and vegetation, indicating that it is not a large or significant change.
+
+The size of the changed area is relatively small, as it is a single triangular shape. The entire image is approximately 1000 meters by 1000 meters, so the change is not very noticeable.
+
+The vegetation and open land remain unchanged, with no significant changes in the overall landscape. The roads and structures in the image are also unchanged.
+
+In summary, the change in IMAGE 2 is the addition of a new triangular-shaped structure in the center of the image. The change is located in the middle of the structure, and the size of the changed area is relatively small. The vegetation and open land remain unchanged, and the roads and structures are also unchanged.",,
+20260526_173249,qwen2-vl-2b,val_47_A,val_47_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a large, rectangular building with a flat roof, surrounded by parking lots and a road. The AFTER image (IMAGE 2) shows the same building with a slightly different roof and a smaller parking lot. The change is a reduction in the size of the parking lot and a slight change in the roof shape.
+
+The change is located in the center of the image, with the parking lot being the only significant change. The building and surrounding structures appear unchanged.
+
+The change is relatively small, as the parking lot reduction is only about 10% of the original size. The building and surrounding structures remain unchanged.
+
+The change is not significant enough to be considered a meaningful change, as the overall scene remains largely unchanged.",,
+20260526_173249,qwen2-vl-2b,val_48_A,val_48_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a large open area with scattered vegetation and a few small buildings. The AFTER image (IMAGE 2) shows the same area with a significant change: a large building has been constructed on the site. The building footprint is centered in the image, and it appears to be a multi-story structure with a flat roof. The change is a new building footprint, and it is located in the center of the image.
+
+The change is a meaningful one, as it represents a significant development in the area. The vegetation and open land remain unchanged, and there is no evidence of flooding or land clearance in the image.
+
+The change is located in the center of the image, with the building footprint centered around the middle. The building footprint is approximately 100 meters wide and 150 meters long, covering a significant portion of the open area.
+
+The building footprint appears to be relatively large, covering a significant portion of the open area. The vegetation and open land remain unchanged, and there is no evidence of flooding or land clearance in the image.
+
+The change is a meaningful one, as it represents a significant development in the area. The building footprint is centered in the image, and it appears to be a multi-story structure with a flat roof. The vegetation and open land remain unchanged, and there is no evidence of flooding or land clearance in the image.",,
+20260526_173249,qwen2-vl-2b,val_49_A,val_49_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with residential houses, streets, and a mix of open land and forested areas. The AFTER image (IMAGE 2) shows a similar scene but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged, as there are no significant differences in the overall layout or appearance of the buildings, roads, vegetation, or open land.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is most likely related to land clearance, as there are visible signs of cleared areas and new building footprints. The roads and vegetation appear to be unchanged.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the central part of the image, specifically in the area where the roads and vegetation have been cleared and new building footprints are visible.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a specific portion of the image, but it is significant enough to be noticeable.
+
+5. **What remained unchanged**: The vegetation, roads, and some buildings appear to remain unchanged, but the cleared areas and new building footprints indicate a change in the land use.
+
+In summary, the scene remains unchanged overall, but there is a noticeable change in the land use, specifically in the area where the roads and vegetation have been cleared and new building footprints are visible.",,
+20260526_173249,qwen2-vl-2b,val_5_A,val_5_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","CHANGE DETECTION REPORT
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a dense forest with scattered patches of open land and a few small roads. The AFTER image (IMAGE 2) shows a suburban development with numerous houses, roads, and a new road cutting through the forest. There is no visible change in the vegetation or the overall landscape.
+
+2. WHAT type of change occurred:
+   - The change is the development of a suburban area into a residential neighborhood.
+
+3. WHERE the change is located:
+   - The change is located in the center of the image, specifically in the area where the new road is cutting through the forest.
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area is relatively small, occupying a small portion of the image.
+
+5. WHAT remained unchanged:
+   - The vegetation, roads, and open land remain unchanged. The forest and the roads are still present in both images, and there are no visible changes in the overall landscape.
+
+SUMMARY:
+- The scene is unchanged.
+- The change is the development of a suburban area into a residential neighborhood.
+- The change is located in the center of the image, specifically in the area where the new road is cutting through the forest.
+- The changed area is relatively small, occupying a small portion of the image.
+- The vegetation, roads, and open land remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_50_A,val_50_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by green vegetation, including trees and bushes, and a few buildings are visible. The roads are narrow and appear to be used for vehicular traffic.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The vegetation appears to have been cleared or modified, as evidenced by the absence of the greenery seen in IMAGE 1. Additionally, there are new building footprints visible in the image, indicating the presence of new structures. The roads appear to have been widened or rerouted, as the road network in IMAGE 2 is different from that in IMAGE 1.
+
+The change in vegetation and the presence of new building footprints suggest that there has been some development or clearing of land in the area. The change is located in the center of the image, with the cleared area being larger than the surrounding vegetation. The roads have been widened, and there are new building footprints visible in the center of the image.
+
+The change in vegetation and the presence of new building footprints suggest that there has been some development or clearing of land in the area. The change is located in the center of the image, with the cleared area being larger than the surrounding vegetation. The roads have been widened, and there are new building footprints visible in the center of the image.",,
+20260526_173249,qwen2-vl-2b,val_51_A,val_51_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","REPORT ON CHANGE DETECTION BETWEEN IMAGES 1 AND 2
+
+1. WHETHER a meaningful change occurred (or if the scene is unchanged):
+   - The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial buildings, roads, and open land. The AFTER image (IMAGE 2) shows a similar area with a significant increase in residential building footprints, particularly in the form of new houses and developments. The roads and open land appear to have been slightly altered, but the overall pattern remains consistent.
+
+2. WHAT type of change occurred:
+   - The change is a significant increase in residential building footprints, with new houses and developments appearing in the AFTER image (IMAGE 2).
+
+3. WHERE the change is located:
+   - The change is located in the residential area, specifically in the form of new houses and developments. The change is visible in the AFTER image (IMAGE 2) and is not present in the BEFORE image (IMAGE 1).
+
+4. HOW LARGE the changed area appears relative to the whole image:
+   - The changed area appears to be relatively small, as it is a small portion of the overall area shown in both images. The BEFORE image (IMAGE 1) shows a larger area, while the AFTER image (IMAGE 2) shows a smaller area.
+
+5. WHAT remained unchanged:
+   - The vegetation, open land, and water bodies remain unchanged in both images. The roads and other infrastructure appear to have been slightly altered, but the overall pattern remains consistent.
+
+In summary, the change detected between IMAGES 1 and 2 is a significant increase in residential building footprints, particularly in the form of new houses and developments. The change is located in the residential area, specifically in the form of new houses and developments. The change appears to be relatively small in size, as it is a small portion of the overall area shown in both images. The vegetation, open land, and water bodies remain unchanged, and the roads and other infrastructure appear to have been slightly altered, but the overall pattern remains consistent.",,
+20260526_173249,qwen2-vl-2b,val_52_A,val_52_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and open land. The AFTER image (IMAGE 2) shows a similar area with a new residential development, including more houses and a larger road network. The change is the addition of new residential buildings and the widening of the road network.
+
+The change is located in the center of the image, with the new development occupying a larger area than the original residential area. The change appears to be significant, as the new development covers a larger portion of the image than the original residential area.
+
+The vegetation and open land remain unchanged, with no visible changes in the vegetation or open land areas. The water bodies, such as ponds and lakes, also remain unchanged.
+
+The change in the road network is the most noticeable change, as the road network appears to have been widened and new roads have been added. The new roads are wider and more extensive than the original roads, indicating a significant change in the road network.
+
+The change in the residential area is the addition of new houses and the widening of the road network, which suggests a development process. The vegetation and open land areas remain unchanged, and the water bodies also remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_53_A,val_53_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The satellite images show a change in the urban or peri-urban area between the two images. The BEFORE image (IMAGE 1) shows a more developed area with several buildings, roads, and a forested area. The AFTER image (IMAGE 2) shows a less developed area with fewer buildings, roads, and a more open landscape.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is a reduction in the density of buildings and an increase in open land and forested areas.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is a reduction in the number of buildings and an increase in open land and forested areas.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the center of the image, specifically in the area where the number of buildings has decreased and the open land and forested areas have increased.
+
+4. **How large the changed area appears relative to the whole image**: The changed area appears to be relatively small, as it is a localized change in the middle of the image.
+
+5. **What remained unchanged**: The vegetation, open land, and some of the roads remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_54_A,val_54_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with the exception of the construction of a new building and the clearing of land.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The new building footprints indicate construction activity. The clearing of land suggests land clearance.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the center of the image, specifically in the area where the new building is being constructed.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image.
+
+5. **What remained unchanged**: The vegetation, roads, and other features remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_55_A,val_55_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by open land, with patches of vegetation and a few small ponds or lakes scattered throughout. There are also some roads and a small building visible.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most significant change is the presence of new building footprints in the area. These new structures appear to be residential or commercial buildings, as they are larger and more complex than the existing structures.
+
+The change is located in the center of the image, with the new buildings appearing to have been constructed on the open land. The roads and vegetation remain largely unchanged, but the presence of the new buildings indicates a significant change in the area's development.
+
+The changed area appears to be relatively small, occupying a small portion of the image. The overall size of the image is not provided, but the change in the number of buildings suggests a significant change in the area's development.
+
+The vegetation and open land remain largely unchanged, with the exception of the new buildings. The ponds and lakes are still present, but their appearance may have changed due to the construction of the new buildings.
+
+Overall, the change in the image is the addition of new building footprints in the peri-urban area.",,
+20260526_173249,qwen2-vl-2b,val_56_A,val_56_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with a mix of residential houses, roads, and open land. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged, as there are no significant differences in the layout or appearance of the houses, roads, or vegetation between the two images.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change appears to be related to the addition of new building footprints. The houses in IMAGE 2 are arranged in a different pattern compared to IMAGE 1, indicating the addition of new structures.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the area where the new houses are being built. The houses are arranged in a semi-circular pattern, suggesting they are being built around a central point.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a specific section of the image. The overall scene remains largely unchanged, with the exception of the new building footprints.
+
+5. **What remained unchanged**: The vegetation, open land, and roads appear to be unchanged, with no significant differences between the two images.
+
+In summary, the scene remains unchanged, with the only noticeable change being the addition of new building footprints in the AFTER image.",,
+20260526_173249,qwen2-vl-2b,val_57_A,val_57_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by large, rectangular fields that are likely agricultural land. There are also some scattered buildings and structures, as well as some vegetation and open land.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most significant change is the presence of new building footprints in the area. These new structures are located in the center of the image, near the intersection of the two fields. The new buildings appear to be residential or commercial structures, as they are larger and more complex than the existing structures.
+
+The change in the AFTER image is a new building footprint, which indicates that the area has undergone some development or expansion. The change is located in the center of the image, near the intersection of the two fields. The new buildings are relatively small in comparison to the existing structures, but they are still noticeable.
+
+The BEFORE image (IMAGE 1) shows a similar peri-urban area with a mix of urban and rural features. The AFTER image (IMAGE 2) shows a new building footprint in the center of the image, near the intersection of the two fields. The change is a new building footprint, which indicates that the area has undergone some development or expansion. The change is located in the center of the image, near the intersection of the two fields. The new buildings are relatively small in comparison to the existing structures, but they are still noticeable.",,
+20260526_173249,qwen2-vl-2b,val_58_A,val_58_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with a mix of residential houses, roads, and open land. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged. There are no visible signs of new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance in the AFTER image that are not also present in the BEFORE image.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: There are no new building footprints, demolition, road widening, vegetation loss, flooding, or land clearance visible in the AFTER image that are not also present in the BEFORE image.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the residential area, specifically in the area where the houses and roads are located. There are no visible changes in the open land or water bodies.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, as it is a small portion of the suburban area. The BEFORE image shows a larger area, and the AFTER image shows a smaller area, indicating that the change is localized.
+
+5. **What remained unchanged**: The residential houses, roads, and open land remain unchanged in both images. The vegetation and water bodies are also unchanged.
+
+In summary, the scene is unchanged between the BEFORE and AFTER images. The only noticeable change is the presence of new building footprints in the AFTER image that are not present in the BEFORE image.",,
+20260526_173249,qwen2-vl-2b,val_59_A,val_59_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with a mix of residential houses, roads, and open land. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged, as there are no significant differences in the layout or appearance of the houses, roads, or vegetation between the two images.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change appears to be related to the addition of new building footprints. The houses in the AFTER image are more densely packed than those in the BEFORE image, indicating the addition of new structures.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the area where the new houses are being built. The houses are located in the northwestern corner of the image, and the road network is more densely packed in that area.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, as it is a small portion of the image. The houses and roads are not the entire image, and the vegetation and open land are also not the entire image.
+
+5. **What remained unchanged**: The vegetation, open land, and roads remain unchanged. The houses and roads are the only elements that have changed, indicating the addition of new building footprints.
+
+In summary, the scene remains unchanged, with the addition of new building footprints being the only significant change observed between the BEFORE and AFTER images.",,
+20260526_173249,qwen2-vl-2b,val_6_A,val_6_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with only a few minor differences.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily related to the addition of new buildings and the widening of roads. There is no clear evidence of demolition, vegetation loss, flooding, or land clearance.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the central part of the image, specifically in the area where new buildings and roads have been added.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not a significant portion of the entire image.
+
+5. **What remained unchanged**: The vegetation, roads, and some buildings remain unchanged. The residential and commercial buildings, roads, and vegetation are similar in both images.
+
+In summary, the change in the image is primarily related to the addition of new buildings and the widening of roads, with no significant changes in the overall scene.",,
+20260526_173249,qwen2-vl-2b,val_60_A,val_60_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and agricultural land. The AFTER image (IMAGE 2) shows a similar area with a significant change in the residential development. The residential areas in IMAGE 2 appear to be more densely packed and have more houses and buildings compared to IMAGE 1.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is noticeable in the residential development. The residential areas in IMAGE 2 are more extensive and have more houses and buildings compared to IMAGE 1.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is a new residential development. The residential areas in IMAGE 2 are more extensive and have more houses and buildings compared to IMAGE 1.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the residential areas in the image. The residential areas in IMAGE 2 are more extensive and have more houses and buildings compared to IMAGE 1.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is larger in IMAGE 2 compared to IMAGE 1. The residential areas in IMAGE 2 are more extensive and have more houses and buildings compared to IMAGE 1.
+
+5. **What remained unchanged**: The vegetation, open land, and water bodies remain unchanged in both images.",,
+20260526_173249,qwen2-vl-2b,val_61_A,val_61_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a small, compact urban area with a few scattered houses and a few small buildings. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes:
+
+1. ** WHETHER a meaningful change occurred (or if the scene is unchanged):** The change is not significant. The overall layout and structure of the area appear to be unchanged. There are no new building footprints, road widening, or significant changes in vegetation or open land.
+
+2. ** WHAT type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance):** The change is a small increase in the number of houses and buildings. There is no clear evidence of new building footprints, road widening, or significant changes in vegetation or open land.
+
+3. ** WHERE the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image):** The change is located in the center of the image, specifically in the area where the number of houses and buildings has increased slightly.
+
+4. ** HOW LARGE the changed area appears relative to the whole image:** The changed area is relatively small, occupying a small portion of the image. It is not a significant change in the overall size of the area.
+
+5. ** WHAT remained unchanged:** The overall layout and structure of the area, including the houses, buildings, roads, and vegetation, remain unchanged. The open land and water bodies are also unchanged.
+
+In summary, the change detected in IMAGE 2 is a small increase in the number of houses and buildings, which is not a meaningful change in the overall scene.",,
+20260526_173249,qwen2-vl-2b,val_62_A,val_62_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of urban and rural features. The image is dominated by large, rectangular fields that are likely agricultural land. There are also some scattered buildings and structures, as well as a few small patches of vegetation.
+
+The AFTER image (IMAGE 2) shows a similar peri-urban area, but with some noticeable changes. The most significant change is the presence of a new building footprint in the center of the image. This building appears to be a residential structure, possibly a house or apartment complex. The building footprint is rectangular and appears to be constructed from concrete or another sturdy material.
+
+The change in the AFTER image is a new building footprint, which is located in the center of the image. The building footprint is approximately 100 meters by 150 meters in size. The change is relatively small in terms of area, but it is significant because it represents a new development in the peri-urban area.
+
+The change in the AFTER image is a new building footprint, which is located in the center of the image. The building footprint is approximately 100 meters by 150 meters in size. The change is relatively small in terms of area, but it is significant because it represents a new development in the peri-urban area.",,
+20260526_173249,qwen2-vl-2b,val_63_A,val_63_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The change is not significant enough to be considered a meaningful change. The scene remains largely unchanged, with only minor differences in the appearance of some buildings and vegetation.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change is primarily in the form of new building footprints. There are several new structures that have appeared in the image, indicating development or construction.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the central part of the image, specifically in the area where the new buildings are situated.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. It is not a significant portion of the entire image.
+
+5. **What remained unchanged**: The vegetation, roads, and some buildings remain unchanged. The residential and commercial buildings, roads, and vegetation appear to be in the same relative positions as in IMAGE 1.
+
+In summary, the change in the image is primarily due to the addition of new building footprints, with the rest of the scene remaining largely unchanged.",,
+20260526_173249,qwen2-vl-2b,val_64_A,val_64_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a suburban area with a mix of residential houses, roads, and open land. The AFTER image (IMAGE 2) shows a similar area, but with some noticeable changes.
+
+1. **Whether a meaningful change occurred (or if the scene is unchanged)**: The scene appears to be unchanged, as there are no significant differences in the layout or appearance of the houses, roads, or vegetation between the two images.
+
+2. **What type of change occurred (e.g. new building footprints, demolition, road widening, vegetation loss, flooding, land clearance)**: The change appears to be related to the addition of new building footprints. The houses in IMAGE 2 are arranged in a different pattern compared to IMAGE 1, indicating the addition of new structures.
+
+3. **Where the change is located (use spatial references: north/south/east/west, center, corners, relative to landmarks visible in the image)**: The change is located in the area where the new houses are being built. The houses are located in the northwestern corner of the image, and the road is in the southeastern corner.
+
+4. **How large the changed area appears relative to the whole image**: The changed area is relatively small, occupying a small portion of the image. The overall scene remains largely unchanged.
+
+5. **What remained unchanged**: The vegetation, open land, and roads appear to be unchanged. The houses, roads, and other features in the image are consistent with the layout seen in IMAGE 1.
+
+In summary, the scene remains unchanged, with the only noticeable change being the addition of new building footprints in the area where the houses are being built.",,
+20260526_173249,qwen2-vl-2b,val_7_A,val_7_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential and commercial buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with a significant change in the residential and commercial buildings. The change is most noticeable in the area around the center of the image, where the residential buildings have been replaced with a large commercial complex.
+
+The change appears to be a new building footprints, as evidenced by the presence of new structures with white roofs and large windows. The roads and vegetation remain largely unchanged, indicating that the change is primarily in the residential and commercial areas.
+
+The change is located in the center of the image, with the new building footprints occupying a significant portion of the area. The change is relatively large, covering a substantial portion of the image.
+
+The vegetation and open land appear to remain unchanged, with no visible signs of flooding or land clearance.
+
+The water bodies, such as the lake and ponds, remain unchanged, indicating that the change is not related to water bodies.
+
+The change is not a simple addition or subtraction of buildings, but rather a new construction project that has replaced the existing buildings.",,
+20260526_173249,qwen2-vl-2b,val_8_A,val_8_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a dense forested area with scattered trees and open spaces. The AFTER image (IMAGE 2) shows a suburban development with numerous houses, roads, and a small body of water. The change between the two images is the transformation of the forested area into a developed residential area.
+
+1. A meaningful change occurred: Yes, the forested area has been converted into a developed residential area.
+
+2. What type of change occurred: The change is a conversion of a forested area into a developed residential area.
+
+3. Where the change is located: The change is located in the center of the image, specifically in the area where the forested area is converted into the residential area.
+
+4. How large the changed area appears relative to the whole image: The changed area appears to be relatively small, occupying a small portion of the image.
+
+5. What remained unchanged: The forested area, roads, and small body of water remain unchanged.",,
+20260526_173249,qwen2-vl-2b,val_9_A,val_9_B,"You are a remote sensing analyst examining two high-resolution
+satellite images of the same geographic location taken at different points in time.
+
+IMAGE 1 is the BEFORE image (earlier date).
+IMAGE 2 is the AFTER  image (later date).
+
+These overhead RGB images show an urban or peri-urban area. Study both images
+carefully — pay attention to structures, roads, vegetation, open land, and
+water bodies.
+
+Write a concise change detection report covering:
+1. WHETHER a meaningful change occurred (or if the scene is unchanged)
+2. WHAT type of change occurred (e.g. new building footprints, demolition,
+   road widening, vegetation loss, flooding, land clearance)
+3. WHERE the change is located (use spatial references: north/south/east/west,
+   center, corners, relative to landmarks visible in the image)
+4. HOW LARGE the changed area appears relative to the whole image
+5. WHAT remained unchanged
+
+Keep the report factual and objective. If you are uncertain about a detail,
+say so explicitly rather than guessing.","The BEFORE image (IMAGE 1) shows a peri-urban area with a mix of residential buildings, roads, and vegetation. The AFTER image (IMAGE 2) shows a similar area with new residential buildings, roads, and a larger area of open land. The change is the addition of new residential buildings and the clearing of land for construction.
+
+1. A meaningful change occurred (yes).
+2. The change is a new building footprints (yes).
+3. The change is located in the area where the new buildings are located (yes).
+4. The change appears to be relatively small, as it is only a small portion of the image (yes).
+5. The vegetation and open land remain unchanged (yes).",,

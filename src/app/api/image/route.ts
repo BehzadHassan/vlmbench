@@ -25,10 +25,10 @@ export async function GET(request: Request) {
     }
 
     const fileName = `${baseName}.png`;
-    let filePath = path.resolve('..', 'val', type, fileName);
+    let filePath = path.join(process.cwd(), 'data', 'val', type, fileName);
 
     if (type === 'label') {
-      const updatedFilePath = path.resolve('..', 'val', 'updated_label', fileName);
+      const updatedFilePath = path.join(process.cwd(), 'data', 'val', 'updated_label', fileName);
       if (fs.existsSync(updatedFilePath)) {
         filePath = updatedFilePath;
       }

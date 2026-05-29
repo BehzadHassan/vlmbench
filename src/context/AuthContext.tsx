@@ -27,8 +27,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (savedRole === 'admin' && savedToken) {
       setRole('admin');
       setAdminToken(savedToken);
-    } else {
+    } else if (savedRole === 'viewer') {
       setRole('viewer');
+    } else {
+      setRole(null);
     }
     setIsLoading(false);
   }, []);
@@ -65,7 +67,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
-    setRole('viewer');
+    setRole(null);
     setAdminToken(null);
     sessionStorage.removeItem('levir-role');
     sessionStorage.removeItem('levir-admin-token');

@@ -8,7 +8,7 @@ import { Sidebar } from '@/components/Sidebar';
 import { EvaluationDisplay } from '@/components/EvaluationDisplay';
 import { Visualizer } from '@/components/Visualizer';
 
-import { LoginPage } from '@/components/LoginPage';
+
 
 export function ViewerDashboard() {
   const { logout } = useAuth();
@@ -30,7 +30,7 @@ export function ViewerDashboard() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
-  const [showLogin, setShowLogin] = useState(false);
+
 
   const loadData = async () => {
     setLoading(true);
@@ -124,7 +124,7 @@ export function ViewerDashboard() {
     <div className="flex h-screen overflow-hidden relative"
       style={{ background: 'var(--bg-deep)', color: 'var(--text-primary)' }}
     >
-      {showLogin && <LoginPage onClose={() => setShowLogin(false)} />}
+
       
       {/* Mobile overlay */}
       {mobileMenuOpen && (
@@ -208,11 +208,11 @@ export function ViewerDashboard() {
                 <span className="badge-viewer">VIEWER</span>
               </div>
               <button
-                onClick={() => setShowLogin(true)}
+                onClick={logout}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium btn-ghost"
               >
                 <LogOut className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Login as Admin</span>
+                <span className="hidden sm:inline">Exit to Home</span>
               </button>
             </header>
 

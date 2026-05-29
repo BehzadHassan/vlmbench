@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import Papa from 'papaparse';
 
-const CSV_PATH = path.resolve('..', 'results', 'batch_results_20260528_234016.csv');
-const EVAL_JSON_PATH = path.resolve('..', 'results', 'batch_results_20260528_234016_evaluated.json');
+const CSV_PATH = path.join(process.cwd(), 'data', 'results', 'batch_results_20260528_234016.csv');
+const EVAL_JSON_PATH = path.join(process.cwd(), 'data', 'results', 'batch_results_20260528_234016_evaluated.json');
 
 const PROMPTS: Record<string, string> = {
     'P1': 'You are a remote sensing analyst examining two high-resolution\nsatellite images of the same geographic location taken at different\npoints in time.\n\nIMAGE 1 is the BEFORE image (earlier date).\nIMAGE 2 is the AFTER image (later date).\n\nThese overhead RGB images show an urban or peri-urban area. Study\nboth images carefully — pay attention to structures, roads,\nvegetation, open land, and water bodies.\n\nWrite a concise change detection report covering:\n1. WHETHER a meaningful change occurred (or if the scene is unchanged)\n2. WHAT type of change occurred (e.g. new building footprints,\n   demolition, road widening, vegetation loss, flooding,\n   land clearance)\n3. WHERE the change is located (use spatial references:\n   north/south/east/west, center, corners, relative to landmarks\n   visible in the image)\n4. HOW LARGE the changed area appears relative to the whole image\n5. WHAT remained unchanged\n\nKeep the report factual and objective. If you are uncertain about\na detail, say so explicitly rather than guessing.',

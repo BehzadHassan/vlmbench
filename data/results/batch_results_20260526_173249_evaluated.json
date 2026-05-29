@@ -1,0 +1,348 @@
+{
+  "val_26_A__val_26_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.665Z",
+    "flagged": false
+  },
+  "val_45_A__val_45_B__qwen2-vl-2b": {
+    "evaluated": false,
+    "scores": {},
+    "notes": "",
+    "flagged": true
+  },
+  "val_1_A__val_1_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 4,
+      "completeness": 9
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-29T06:36:53.559Z",
+    "flagged": true
+  },
+  "val_2_A__val_2_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:23.586Z",
+    "flagged": false
+  },
+  "val_3_A__val_3_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:24.372Z",
+    "flagged": false
+  },
+  "val_4_A__val_4_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:25.035Z",
+    "flagged": false
+  },
+  "val_5_A__val_5_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:25.716Z",
+    "flagged": false
+  },
+  "val_6_A__val_6_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:26.013Z",
+    "flagged": false
+  },
+  "val_7_A__val_7_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:26.380Z",
+    "flagged": false
+  },
+  "val_8_A__val_8_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:26.985Z",
+    "flagged": false
+  },
+  "val_9_A__val_9_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:27.168Z",
+    "flagged": false
+  },
+  "val_10_A__val_10_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:27.481Z",
+    "flagged": false
+  },
+  "val_11_A__val_11_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:27.636Z",
+    "flagged": false
+  },
+  "val_12_A__val_12_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:27.891Z",
+    "flagged": false
+  },
+  "val_13_A__val_13_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:28.121Z",
+    "flagged": false
+  },
+  "val_14_A__val_14_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:28.473Z",
+    "flagged": false
+  },
+  "val_15_A__val_15_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:28.743Z",
+    "flagged": false
+  },
+  "val_16_A__val_16_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:28.839Z",
+    "flagged": false
+  },
+  "val_17_A__val_17_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.072Z",
+    "flagged": false
+  },
+  "val_18_A__val_18_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.206Z",
+    "flagged": false
+  },
+  "val_19_A__val_19_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.523Z",
+    "flagged": false
+  },
+  "val_20_A__val_20_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.642Z",
+    "flagged": false
+  },
+  "val_21_A__val_21_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.766Z",
+    "flagged": false
+  },
+  "val_22_A__val_22_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:29.928Z",
+    "flagged": false
+  },
+  "val_23_A__val_23_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.070Z",
+    "flagged": false
+  },
+  "val_24_A__val_24_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.324Z",
+    "flagged": false
+  },
+  "val_25_A__val_25_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.492Z",
+    "flagged": false
+  },
+  "val_27_A__val_27_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.868Z",
+    "flagged": false
+  },
+  "val_28_A__val_28_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:30.943Z",
+    "flagged": false
+  },
+  "val_29_A__val_29_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.106Z",
+    "flagged": false
+  },
+  "val_30_A__val_30_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.374Z",
+    "flagged": false
+  },
+  "val_31_A__val_31_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.607Z",
+    "flagged": false
+  },
+  "val_32_A__val_32_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.753Z",
+    "flagged": false
+  },
+  "val_33_A__val_33_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.850Z",
+    "flagged": false
+  },
+  "val_34_A__val_34_B__qwen2-vl-2b": {
+    "evaluated": true,
+    "scores": {
+      "correctness": 3,
+      "completeness": 5
+    },
+    "notes": "",
+    "evaluatedAt": "2026-05-28T17:52:31.950Z",
+    "flagged": false
+  }
+}
