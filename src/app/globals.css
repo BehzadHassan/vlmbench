@@ -6,61 +6,61 @@
    ======================================== */
 
 :root {
-  /* Core Palette */
-  --bg-deep: #f8fafc; /* Very light slate for main body */
-  --bg-base: #ffffff; /* Pure white */
-  --bg-surface: #ffffff;
-  --bg-elevated: #ffffff; /* Make sidebars and headers pure white */
-  --bg-card: #ffffff;
-  --bg-card-high: #f1f5f9; /* Slate 100 for subtle contrast */
-  --bg-card-highest: #e2e8f0; /* Slate 200 */
-  --bg-bright: #ffffff;
+  /* Core Palette — Dark Cosmic Theme */
+  --bg-deep: #050a18;        /* Deepest background */
+  --bg-base: #0a1128;        /* Panels, sidebars */
+  --bg-surface: #0d1530;     /* Inputs, surfaces */
+  --bg-elevated: #0f1835;    /* Headers, elevated areas */
+  --bg-card: #111d3a;        /* Cards */
+  --bg-card-high: #152040;   /* Subtle contrast */
+  --bg-card-highest: #1a2748;/* Highest contrast */
+  --bg-bright: #1e2d52;      /* Bright accent bg */
 
   /* Text */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --text-faint: #94a3b8;
+  --text-faint: #475569;
 
   /* Accents */
-  --accent-indigo: #4f46e5;
-  --accent-indigo-light: #6366f1;
-  --accent-indigo-container: #818cf8;
-  --accent-emerald: #059669;
-  --accent-emerald-light: #10b981;
-  --accent-emerald-container: #34d399;
-  --accent-sky: #0284c7;
-  --accent-sky-light: #0ea5e9;
-  --accent-rose: #e11d48;
-  --accent-amber: #d97706;
+  --accent-indigo: #6366f1;
+  --accent-indigo-light: #818cf8;
+  --accent-indigo-container: #a5b4fc;
+  --accent-emerald: #10b981;
+  --accent-emerald-light: #34d399;
+  --accent-emerald-container: #6ee7b7;
+  --accent-sky: #06b6d4;
+  --accent-sky-light: #22d3ee;
+  --accent-rose: #f43f5e;
+  --accent-amber: #f59e0b;
 
-  --accent-blue: #2563eb;
-  --accent-teal: #0d9488;
-  --accent-teal-light: #14b8a6;
-  --accent-purple: #7c3aed;
-  --accent-purple-bg: #ede9fe;
-  --accent-amber-slider: #d97706;
-  --accent-amber-bg: #fef3c7;
-  --accent-coral: #ea580c;
+  --accent-blue: #38bdf8;
+  --accent-teal: #14b8a6;
+  --accent-teal-light: #2dd4bf;
+  --accent-purple: #a78bfa;
+  --accent-purple-bg: rgba(167, 139, 250, 0.12);
+  --accent-amber-slider: #f59e0b;
+  --accent-amber-bg: rgba(245, 158, 11, 0.12);
+  --accent-coral: #fb923c;
   --accent-coral-text: #fff;
 
   /* Borders */
-  --border-subtle: rgba(0, 0, 0, 0.05);
-  --border-default: rgba(0, 0, 0, 0.1);
-  --border-strong: rgba(0, 0, 0, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.15);
 
   /* Glass */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-bg-solid: rgba(255, 255, 255, 0.95);
+  --glass-bg: rgba(10, 17, 40, 0.85);
+  --glass-bg-solid: rgba(15, 24, 53, 0.95);
   --glass-blur: 24px;
-  --glass-border: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+  --glass-border: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%);
 
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --shadow-glow-indigo: 0 0 20px rgba(79, 70, 229, 0.15);
-  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.15);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-glow-indigo: 0 0 20px rgba(99, 102, 241, 0.25);
+  --shadow-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.25);
 
   /* Misc */
   --background: var(--bg-base);
@@ -88,8 +88,8 @@ body {
    ======================================== */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -111,7 +111,7 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(17, 29, 58, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
@@ -119,7 +119,7 @@ body {
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(21, 32, 64, 0.95);
   border-color: var(--border-default);
   box-shadow: var(--shadow-md);
 }
@@ -149,15 +149,15 @@ body {
    Form Controls
    ======================================== */
 .dark-input {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text-primary);
   transition: all 0.2s ease;
 }
 
 .dark-input:focus {
   border-color: var(--accent-indigo);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
   outline: none;
 }
 
@@ -166,15 +166,15 @@ body {
 }
 
 .dark-select {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text-primary);
   transition: all 0.2s ease;
 }
 
 .dark-select:focus {
   border-color: var(--accent-indigo);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
   outline: none;
 }
 
@@ -194,8 +194,8 @@ body {
 }
 
 .btn-indigo:hover {
-  background: #5558e6;
-  box-shadow: 0 0 16px rgba(99, 102, 241, 0.3);
+  background: #7c7ef5;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
 
 .btn-indigo:disabled {
@@ -241,7 +241,7 @@ body {
 }
 
 .btn-ghost:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--border-strong);
   color: var(--text-primary);
 }
@@ -250,9 +250,9 @@ body {
    Badges
    ======================================== */
 .badge-viewer {
-  background: rgba(99, 102, 241, 0.15);
+  background: rgba(99, 102, 241, 0.12);
   color: var(--accent-indigo-light);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
@@ -262,9 +262,9 @@ body {
 }
 
 .badge-admin {
-  background: rgba(99, 102, 241, 0.15);
-  color: var(--accent-indigo-light);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(6, 182, 212, 0.12);
+  color: var(--accent-sky-light);
+  border: 1px solid rgba(6, 182, 212, 0.2);
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   font-weight: 600;
@@ -286,7 +286,7 @@ input[type="range"] {
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
   appearance: none;
   width: 16px;
   height: 16px;
@@ -311,23 +311,22 @@ input[type="range"]::-moz-range-thumb {
    Scrollbar (Light & Vibrant)
    ======================================== */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
-  border-radius: 5px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(79, 70, 229, 0.4); /* subtle indigo */
-  border-radius: 5px;
-  border: 2px solid var(--bg-deep);
+  background: rgba(99, 102, 241, 0.25);
+  border-radius: 4px;
+  border: 2px solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-indigo);
+  background: rgba(99, 102, 241, 0.5);
 }
 
 /* ========================================
@@ -368,6 +367,29 @@ input[type="range"]::-moz-range-thumb {
 
 .animate-slide-up {
   animation: slide-up 0.5s ease-out;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out;
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.4s ease-out;
 }
 
 /* ========================================

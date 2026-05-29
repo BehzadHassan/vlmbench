@@ -150,7 +150,7 @@ export function Sidebar(props: SidebarProps) {
                   borderBottom: '1px solid var(--border-subtle)',
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSelected) e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)';
+                  if (!isSelected) e.currentTarget.style.background = 'rgba(99, 102, 241, 0.05)';
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) e.currentTarget.style.background = 'transparent';

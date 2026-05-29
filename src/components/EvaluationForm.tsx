@@ -11,13 +11,14 @@ interface EvaluationFormProps {
   setFormNotes: (notes: string) => void;
   isSaving: boolean;
   onSave: () => void;
+  onClear: () => void;
   onToggleFlag: (item: RowData, e?: React.MouseEvent) => void;
 }
 
 export function EvaluationForm(props: EvaluationFormProps) {
   const {
     selectedItem, settings, formScores, setFormScores,
-    formNotes, setFormNotes, isSaving, onSave, onToggleFlag
+    formNotes, setFormNotes, isSaving, onSave, onClear, onToggleFlag
   } = props;
 
   if (!selectedItem) {
@@ -132,14 +133,27 @@ export function EvaluationForm(props: EvaluationFormProps) {
       </div>
 
       {/* Save Button */}
-      <div className="p-4 shrink-0" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-elevated)' }}>
+      <div className="p-4 shrink-0 flex gap-2" style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-elevated)' }}>
+        {selectedItem.evaluated && (
+          <button
+            onClick={onClear}
+            disabled={isSaving}
+            className="py-3 px-4 rounded-xl transition-all flex justify-center items-center gap-2 btn-ghost disabled:opacity-50 font-bold"
+            style={{ color: 'var(--accent-rose)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(244, 63, 94, 0.1)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent' }}
+            title="Clear this evaluation"
+          >
+            Clear
+          </button>
+        )}
         <button
           onClick={onSave}
           disabled={isSaving}
-          className="w-full py-3 px-4 rounded-xl transition-all flex justify-center items-center gap-2 btn-indigo disabled:opacity-50"
+          className="flex-1 py-3 px-4 rounded-xl transition-all flex justify-center items-center gap-2 btn-indigo disabled:opacity-50"
         >
           <Save className="h-4 w-4" />
-          {isSaving ? 'Saving...' : 'Save & Next (Ctrl+Enter)'}
+          {isSaving ? 'Saving...' : 'Save & Next'}
         </button>
       </div>
     </div>

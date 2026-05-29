@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Settings, RefreshCw, Eye, SlidersHorizontal, FileSpreadsheet, Plus, Trash2, Menu, LogOut, Shield } from 'lucide-react';
+import { Settings, RefreshCw, Eye, SlidersHorizontal, FileSpreadsheet, Plus, Trash2, Menu, LogOut, Shield, X } from 'lucide-react';
 import { Metric, EvaluationSettings, RowData } from '@/types';
 import { useAuth } from '@/context/AuthContext';
 import { Sidebar } from '@/components/Sidebar';
@@ -40,6 +40,15 @@ export function AdminDashboard() {
   // Mobile & Desktop State
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+
+  // Notifications & Modals
+  const [toastMessage, setToastMessage] = useState<{ title: string, message: string, type: 'success' | 'error' } | null>(null);
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+
+  const showToast = (title: string, message: string, type: 'success' | 'error' = 'success') => {
+    setToastMessage({ title, message, type });
+    setTimeout(() => setToastMessage(null), 3500);
+  };
 
   const authHeaders = (): Record<string, string> => {
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
@@ -159,7 +168,7 @@ export function AdminDashboard() {
       });
       if (!response.ok) throw new Error('Failed to update flag');
     } catch (err: any) {
-      alert(err.message || 'Error updating flag');
+      showToast('Error', err.message || 'Error updating flag', 'error');
       setData(prevData => prevData.map(d => d.id === item.id ? { ...d, flagged: !newFlaggedState } : d));
     }
   };
@@ -193,10 +202,73 @@ export function AdminDashboard() {
         return newData;
       });
       navigateNext();
+      showToast('Saved', 'Evaluation saved successfully.', 'success');
     } catch (err: any) {
-      alert(err.message || 'Error saving');
+      showToast('Error', err.message || 'Error saving', 'error');
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleClearEvaluation = async () => {
+    if (!selectedItem) return;
+    setIsSaving(true);
+    try {
+      const response = await fetch('/api/evaluate', {
+        method: 'POST',
+        headers: authHeaders(),
+        body: JSON.stringify({
+          id: selectedItem.id,
+          scores: {},
+          notes: '',
+          evaluated: false,
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to clear evaluation');
+
+      setData(prevData => {
+        const newData = [...prevData];
+        newData[selectedIndex] = {
+          ...newData[selectedIndex],
+          evaluated: false,
+          scores: {},
+          notes: '',
+        };
+        return newData;
+      });
+      showToast('Cleared', 'Evaluation has been reset.', 'success');
+    } catch (err: any) {
+      showToast('Error', err.message || 'Error clearing', 'error');
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const handleClearAllEvaluations = () => {
+    setShowClearConfirm(true);
+  };
+
+  const executeClearAll = async () => {
+    try {
+      const response = await fetch('/api/evaluate?clearAll=true', {
+        method: 'DELETE',
+        headers: authHeaders(),
+      });
+      if (!response.ok) throw new Error('Failed to clear all evaluations');
+      
+      setData(prevData => prevData.map(item => ({
+        ...item,
+        evaluated: false,
+        scores: {},
+        notes: ''
+      })));
+      setShowSettingsModal(false);
+      setShowClearConfirm(false);
+      showToast('Evaluations Cleared', 'All records have been reset successfully.', 'success');
+    } catch (err: any) {
+      showToast('Error', err.message || 'Error clearing evaluations', 'error');
+      setShowClearConfirm(false);
     }
   };
 
@@ -211,8 +283,9 @@ export function AdminDashboard() {
       setSettings({ metricsByPrompt: editingMetrics });
       setShowSettingsModal(false);
       loadDataAndSettings();
+      showToast('Settings Saved', 'Configuration updated successfully.', 'success');
     } catch (err: any) {
-      alert(err.message || 'Error saving settings');
+      showToast('Error', err.message || 'Error saving settings', 'error');
     }
   };
 
@@ -326,7 +399,7 @@ export function AdminDashboard() {
                   className="p-2 rounded-lg transition-colors"
                   style={{ color: 'var(--text-muted)' }}
                   title="Evaluation Settings"
-                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--text-muted)'; }}
                 >
                   <Settings className="h-5 w-5" />
@@ -455,6 +528,7 @@ export function AdminDashboard() {
                   setFormNotes={setFormNotes}
                   isSaving={isSaving}
                   onSave={handleSaveEvaluation}
+                  onClear={handleClearEvaluation}
                   onToggleFlag={handleToggleFlag}
                 />
               </div>
@@ -578,7 +652,7 @@ export function AdminDashboard() {
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = 'var(--accent-indigo)';
                   e.currentTarget.style.color = 'var(--accent-indigo-light)';
-                  e.currentTarget.style.background = 'rgba(79, 70, 229, 0.05)';
+                  e.currentTarget.style.background = 'rgba(99, 102, 241, 0.08)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-default)';
@@ -590,23 +664,96 @@ export function AdminDashboard() {
               </button>
             </div>
 
-            <div className="p-5 flex justify-end gap-3 shrink-0"
+            <div className="p-5 flex justify-between shrink-0 items-center"
               style={{ borderTop: '1px solid var(--border-subtle)', background: 'var(--bg-base)' }}
             >
               <button
-                onClick={() => setShowSettingsModal(false)}
+                onClick={handleClearAllEvaluations}
+                className="px-4 py-2 rounded-xl text-sm font-semibold transition-colors"
+                style={{ color: 'var(--accent-rose)', border: '1px solid var(--accent-rose)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(244, 63, 94, 0.1)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+              >
+                Clear All Evaluations
+              </button>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowSettingsModal(false)}
+                  className="px-5 py-2.5 rounded-xl text-sm font-semibold btn-ghost"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSaveSettings}
+                  className="px-5 py-2.5 rounded-xl text-sm font-bold btn-indigo"
+                >
+                  Save Configuration
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Clear Confirmation Modal */}
+      {showClearConfirm && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 animate-fade-in"
+          style={{ background: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(8px)' }}
+        >
+          <div className="glass-panel-solid rounded-2xl max-w-sm w-full p-6 text-center animate-fade-in-scale shadow-2xl"
+            style={{ border: '1px solid rgba(244, 63, 94, 0.2)' }}
+          >
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+              style={{ background: 'rgba(244, 63, 94, 0.1)', color: 'var(--accent-rose)' }}
+            >
+              <Trash2 className="h-8 w-8" />
+            </div>
+            <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Clear All Evaluations?</h3>
+            <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
+              This action cannot be undone. All evaluation scores, notes, and progress will be permanently erased.
+            </p>
+            <div className="flex gap-3 justify-center">
+              <button
+                onClick={() => setShowClearConfirm(false)}
                 className="px-5 py-2.5 rounded-xl text-sm font-semibold btn-ghost"
               >
                 Cancel
               </button>
               <button
-                onClick={handleSaveSettings}
-                className="px-5 py-2.5 rounded-xl text-sm font-bold btn-indigo"
+                onClick={executeClearAll}
+                className="px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg"
+                style={{ background: 'var(--accent-rose)', color: 'white' }}
               >
-                Save Configuration
+                Yes, Clear All
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Global Toast Notification */}
+      {toastMessage && (
+        <div className="fixed top-6 right-6 z-[70] animate-fade-in-down flex items-start gap-3 p-4 rounded-xl shadow-2xl min-w-[300px]"
+          style={{
+            background: 'var(--bg-elevated)',
+            border: `1px solid ${toastMessage.type === 'error' ? 'var(--accent-rose)' : 'var(--accent-emerald)'}`,
+            color: 'var(--text-primary)'
+          }}
+        >
+          <div className="w-2 h-10 rounded-full shrink-0" style={{ background: toastMessage.type === 'error' ? 'var(--accent-rose)' : 'var(--accent-emerald)' }}></div>
+          <div className="flex-1 pr-6">
+            <h4 className="text-sm font-bold">{toastMessage.title}</h4>
+            <p className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{toastMessage.message}</p>
+          </div>
+          <button 
+            onClick={() => setToastMessage(null)}
+            className="absolute top-4 right-4 p-1 rounded-md transition-colors"
+            style={{ color: 'var(--text-muted)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text-primary)'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-muted)'; e.currentTarget.style.background = 'transparent'; }}
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
       )}
     </div>

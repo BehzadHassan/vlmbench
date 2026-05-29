@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { SlidersHorizontal } from 'lucide-react';
+import { SlidersHorizontal, AlertTriangle } from 'lucide-react';
 import { RowData } from '../types';
 import { DeepZoomModal } from './DeepZoomModal';
 
@@ -262,6 +262,26 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
             </div>
           </div>
 
+          {/* Mask Warning */}
+          <div className="flex flex-col sm:flex-row items-center gap-3 p-4 rounded-xl mt-6"
+            style={{ 
+              background: 'rgba(245, 158, 11, 0.05)',
+              border: '1px solid rgba(245, 158, 11, 0.15)',
+            }}
+          >
+            <div className="w-10 h-10 shrink-0 rounded-full flex items-center justify-center"
+              style={{ background: 'rgba(245, 158, 11, 0.1)', color: 'var(--accent-amber)' }}
+            >
+              <AlertTriangle className="h-5 w-5" />
+            </div>
+            <div className="text-center sm:text-left">
+              <h4 className="text-sm font-bold" style={{ color: 'var(--accent-amber)' }}>Original Dataset Masks</h4>
+              <p className="text-xs mt-0.5 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+                Please note: The masks displayed are the original ground truth from the LEVIR-CD dataset. Some masks may be incomplete or lack fine details inherent to the source data and are not created by our model.
+              </p>
+            </div>
+          </div>
+
           {/* Controls */}
           <div className="flex flex-wrap items-center justify-between gap-6 p-4 rounded-xl glass-card mt-6 shrink-0">
             <div className="flex items-center gap-2 pr-6"
@@ -370,7 +390,8 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
             <div
               className="absolute pointer-events-none z-10"
               style={{
-                background: 'rgba(255,255,255,0.8)',
+                background: 'linear-gradient(to bottom, #6366f1, #06b6d4)',
+                boxShadow: '0 0 12px rgba(99, 102, 241, 0.5)',
                 ...(swipeOrientation === 'vertical' ? {
                   left: `${swipePosition}%`,
                   top: 0,

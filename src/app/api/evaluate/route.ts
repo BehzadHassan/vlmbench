@@ -55,3 +55,27 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const token = extractToken(request);
+    if (!isValidToken(token)) {
+      return NextResponse.json({ error: 'Unauthorized. Admin access required.' }, { status: 403 });
+    }
+
+    const { searchParams } = new URL(request.url);
+    const clearAll = searchParams.get('clearAll') === 'true';
+
+    if (clearAll) {
+      if (fs.existsSync(EVAL_JSON_PATH)) {
+        fs.writeFileSync(EVAL_JSON_PATH, JSON.stringify({}, null, 2), 'utf-8');
+      }
+      return NextResponse.json({ success: true, message: 'All evaluations cleared' });
+    }
+
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 });
+  } catch (error: any) {
+    console.error(error);
+    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+  }
+}
