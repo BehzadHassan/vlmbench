@@ -55,14 +55,14 @@ export function EvaluationForm(props: EvaluationFormProps) {
 
       {/* Scores */}
       <div className="flex-1 overflow-y-auto p-5 space-y-6">
-        {settings.metrics.length === 0 ? (
+        {(!settings.metricsByPrompt || !settings.metricsByPrompt[selectedItem.promptId] || settings.metricsByPrompt[selectedItem.promptId].length === 0) ? (
           <div className="text-sm p-4 rounded-lg text-center font-medium"
-            style={{ background: 'rgba(2, 6, 23, 0.3)', border: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}
+            style={{ background: 'var(--bg-card-highest)', border: '1px solid var(--border-subtle)', color: 'var(--text-muted)' }}
           >
-            No metrics defined. Please add metrics in Settings.
+            No metrics defined for {selectedItem.promptId}. Please add metrics in Settings.
           </div>
         ) : (
-          settings.metrics.map(metric => {
+          settings.metricsByPrompt[selectedItem.promptId].map(metric => {
             const currentValue = Number(formScores[metric.id] || metric.defaultValue);
             const min = metric.min || 1;
             const max = metric.max || 5;
@@ -136,7 +136,7 @@ export function EvaluationForm(props: EvaluationFormProps) {
         <button
           onClick={onSave}
           disabled={isSaving}
-          className="w-full py-3 px-4 rounded-xl transition-all flex justify-center items-center gap-2 btn-teal disabled:opacity-50"
+          className="w-full py-3 px-4 rounded-xl transition-all flex justify-center items-center gap-2 btn-indigo disabled:opacity-50"
         >
           <Save className="h-4 w-4" />
           {isSaving ? 'Saving...' : 'Save & Next (Ctrl+Enter)'}

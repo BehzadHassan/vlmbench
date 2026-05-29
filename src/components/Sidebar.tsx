@@ -12,6 +12,8 @@ interface SidebarProps {
   setFilterStatus: (s: 'all' | 'evaluated' | 'pending') => void;
   selectedModel: string;
   setSelectedModel: (s: string) => void;
+  promptFilter: string;
+  setPromptFilter: (s: string) => void;
   modelsList: string[];
   currentPage: number;
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
@@ -27,7 +29,7 @@ interface SidebarProps {
 export function Sidebar(props: SidebarProps) {
   const {
     data, filteredData, loading, searchTerm, setSearchTerm, filterStatus, setFilterStatus,
-    selectedModel, setSelectedModel, modelsList, currentPage, setCurrentPage, totalPages,
+    selectedModel, setSelectedModel, promptFilter, setPromptFilter, modelsList, currentPage, setCurrentPage, totalPages,
     paginatedData, selectedIndex, setSelectedIndex, selectedItem, onToggleFlag, role = 'admin'
   } = props;
 
@@ -37,8 +39,8 @@ export function Sidebar(props: SidebarProps) {
 
   const isViewer = role === 'viewer';
   const highlightColor = 'var(--accent-blue)';
-  const progressFillColor = 'var(--accent-teal)';
-  const checkmarkColor = 'var(--accent-teal-light)';
+  const progressFillColor = 'var(--accent-indigo)';
+  const checkmarkColor = 'var(--accent-indigo-light)';
 
   return (
     <div className="w-[85vw] sm:w-[320px] lg:w-[320px] flex flex-col h-full shrink-0"
@@ -54,7 +56,7 @@ export function Sidebar(props: SidebarProps) {
         <div className="mt-4 space-y-1.5">
           <div className="flex justify-between text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
             <span>Progress</span>
-            <span style={{ color: completionPercentage === 100 ? 'var(--accent-emerald-light)' : 'var(--text-secondary)' }}>
+            <span style={{ color: completionPercentage === 100 ? 'var(--accent-indigo-light)' : 'var(--text-secondary)' }}>
               {evaluatedCount} / {totalCount} ({completionPercentage}%)
             </span>
           </div>
@@ -95,9 +97,23 @@ export function Sidebar(props: SidebarProps) {
           </select>
 
           <select
+            value={promptFilter}
+            onChange={(e: any) => setPromptFilter(e.target.value)}
+            className="flex-1 text-xs font-medium rounded-lg px-2.5 py-2 cursor-pointer dark-select"
+          >
+            <option value="all">All Prompts</option>
+            <option value="P1">Prompt 1</option>
+            <option value="P2">Prompt 2</option>
+            <option value="P3">Prompt 3</option>
+            <option value="P4">Prompt 4</option>
+          </select>
+        </div>
+
+        <div className="flex gap-2">
+          <select
             value={selectedModel}
             onChange={(e: any) => setSelectedModel(e.target.value)}
-            className="flex-1 text-xs font-medium rounded-lg px-2.5 py-2 cursor-pointer dark-select"
+            className="w-full text-xs font-medium rounded-lg px-2.5 py-2 cursor-pointer dark-select"
           >
             <option value="all">All Models</option>
             {modelsList.map(m => (
@@ -150,7 +166,7 @@ export function Sidebar(props: SidebarProps) {
                     <span className="font-semibold text-sm truncate"
                       style={{ color: isSelected ? 'var(--text-primary)' : 'var(--text-secondary)' }}
                     >
-                      {item.image_a_name.replace('_A', '')}
+                      {item.image_a_name.replace('_A', '')} - {item.promptId}
                     </span>
                     {item.flagged && <Flag className="h-3.5 w-3.5 shrink-0 fill-current" style={{ color: 'var(--accent-rose)' }} />}
                   </div>

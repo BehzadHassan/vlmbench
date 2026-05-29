@@ -26,9 +26,6 @@ export default function Page() {
     );
   }
 
-  if (!role) {
-    return <LoginPage />;
-  }
 
   if (role === 'viewer') {
     return <ViewerDashboard />;

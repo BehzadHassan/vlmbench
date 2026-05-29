@@ -9,7 +9,7 @@ export interface Metric {
 }
 
 export interface EvaluationSettings {
-  metrics: Metric[];
+  metricsByPrompt: Record<string, Metric[]>;
 }
 
 export interface RowData {
@@ -20,6 +20,7 @@ export interface RowData {
   image_a_name: string;
   image_b_name: string;
   prompt: string;
+  promptId: string;
   response: string;
   evaluated: boolean;
   scores: Record<string, number>;

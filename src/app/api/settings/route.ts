@@ -3,29 +3,36 @@ import fs from 'fs';
 import path from 'path';
 import { isValidToken, extractToken } from '@/lib/auth';
 
-const SETTINGS_JSON_PATH = path.resolve('..', 'results', 'evaluation_settings.json');
+const SETTINGS_JSON_PATH = path.resolve('..', 'results', 'evaluation_settings_multiprompt.json');
+
+const DEFAULT_METRICS = [
+  {
+    id: 'correctness',
+    name: 'Correctness',
+    type: 'scale',
+    min: 1,
+    max: 5,
+    defaultValue: 3,
+    description: 'Overall accuracy of the change detection response.'
+  },
+  {
+    id: 'completeness',
+    name: 'Completeness',
+    type: 'scale',
+    min: 1,
+    max: 10,
+    defaultValue: 5,
+    description: 'How well the response addressed all prompts (what, where, how large).'
+  }
+];
 
 const DEFAULT_SETTINGS = {
-  metrics: [
-    {
-      id: 'correctness',
-      name: 'Correctness',
-      type: 'scale',
-      min: 1,
-      max: 5,
-      defaultValue: 3,
-      description: 'Overall accuracy of the change detection response.'
-    },
-    {
-      id: 'completeness',
-      name: 'Completeness',
-      type: 'scale',
-      min: 1,
-      max: 10,
-      defaultValue: 5,
-      description: 'How well the response addressed all prompts (what, where, how large).'
-    }
-  ]
+  metricsByPrompt: {
+    'P1': [...DEFAULT_METRICS],
+    'P2': [...DEFAULT_METRICS],
+    'P3': [...DEFAULT_METRICS],
+    'P4': [...DEFAULT_METRICS]
+  }
 };
 
 export async function GET() {
@@ -58,13 +65,13 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { metrics } = body;
+    const { metricsByPrompt } = body;
 
-    if (!metrics || !Array.isArray(metrics)) {
-      return NextResponse.json({ error: 'Invalid metrics list' }, { status: 400 });
+    if (!metricsByPrompt || typeof metricsByPrompt !== 'object') {
+      return NextResponse.json({ error: 'Invalid metricsByPrompt object' }, { status: 400 });
     }
 
-    const newSettings = { metrics };
+    const newSettings = { metricsByPrompt };
 
     const dir = path.dirname(SETTINGS_JSON_PATH);
     if (!fs.existsSync(dir)) {

@@ -24,11 +24,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const savedRole = sessionStorage.getItem('levir-role') as UserRole;
     const savedToken = sessionStorage.getItem('levir-admin-token');
-    if (savedRole === 'viewer') {
-      setRole('viewer');
-    } else if (savedRole === 'admin' && savedToken) {
+    if (savedRole === 'admin' && savedToken) {
       setRole('admin');
       setAdminToken(savedToken);
+    } else {
+      setRole('viewer');
     }
     setIsLoading(false);
   }, []);
@@ -65,7 +65,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const logout = useCallback(() => {
-    setRole(null);
+    setRole('viewer');
     setAdminToken(null);
     sessionStorage.removeItem('levir-role');
     sessionStorage.removeItem('levir-admin-token');

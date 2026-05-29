@@ -16,14 +16,16 @@ export function AdminDashboard() {
 
   // Selection & Settings
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [settings, setSettings] = useState<EvaluationSettings>({ metrics: [] });
+  const [settings, setSettings] = useState<EvaluationSettings>({ metricsByPrompt: {} });
   const [showSettingsModal, setShowSettingsModal] = useState(false);
-  const [editingMetrics, setEditingMetrics] = useState<Metric[]>([]);
+  const [editingMetrics, setEditingMetrics] = useState<Record<string, Metric[]>>({});
+  const [activeSettingsPrompt, setActiveSettingsPrompt] = useState<string>('P1');
 
   // Filters
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState<'all' | 'evaluated' | 'pending'>('all');
   const [selectedModel, setSelectedModel] = useState<string>('all');
+  const [promptFilter, setPromptFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [mainTab, setMainTab] = useState<'visualizer' | 'prompt' | 'response'>('visualizer');
 
@@ -51,7 +53,7 @@ export function AdminDashboard() {
       const settingsRes = await fetch('/api/settings');
       const settingsData = await settingsRes.json();
       setSettings(settingsData);
-      setEditingMetrics(settingsData.metrics);
+      setEditingMetrics(settingsData.metricsByPrompt || {});
 
       const dataRes = await fetch('/api/data');
       const dataJson = await dataRes.json();
@@ -75,7 +77,8 @@ export function AdminDashboard() {
   useEffect(() => {
     if (selectedItem) {
       const initialScores: Record<string, number> = {};
-      settings.metrics.forEach(m => {
+      const currentMetrics = settings.metricsByPrompt?.[selectedItem.promptId] || [];
+      currentMetrics.forEach(m => {
         if (m.type === 'scale') {
           initialScores[m.id] = selectedItem.scores?.[m.id] !== undefined
             ? selectedItem.scores[m.id]
@@ -89,7 +92,7 @@ export function AdminDashboard() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchTerm, filterStatus, selectedModel]);
+  }, [searchTerm, filterStatus, selectedModel, promptFilter]);
 
   const modelsList = Array.from(new Set(data.map(d => d.model))).filter(Boolean);
 
@@ -103,7 +106,9 @@ export function AdminDashboard() {
         filterStatus === 'evaluated' ? item.evaluated : !item.evaluated;
     const matchesModel =
       selectedModel === 'all' ? true : item.model === selectedModel;
-    return matchesSearch && matchesStatus && matchesModel;
+    const matchesPrompt =
+      promptFilter === 'all' ? true : item.promptId === promptFilter;
+    return matchesSearch && matchesStatus && matchesModel && matchesPrompt;
   });
 
   const itemsPerPage = 50;
@@ -200,10 +205,10 @@ export function AdminDashboard() {
       const response = await fetch('/api/settings', {
         method: 'POST',
         headers: authHeaders(),
-        body: JSON.stringify({ metrics: editingMetrics }),
+        body: JSON.stringify({ metricsByPrompt: editingMetrics }),
       });
       if (!response.ok) throw new Error('Failed to save settings');
-      setSettings({ metrics: editingMetrics });
+      setSettings({ metricsByPrompt: editingMetrics });
       setShowSettingsModal(false);
       loadDataAndSettings();
     } catch (err: any) {
@@ -218,7 +223,7 @@ export function AdminDashboard() {
       >
         <div className="glass-panel-solid p-8 rounded-2xl max-w-md w-full text-center space-y-4">
           <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto"
-            style={{ background: 'rgba(244, 63, 94, 0.15)', color: 'var(--accent-rose)' }}
+            style={{ background: 'rgba(99, 102, 241, 0.15)', color: 'var(--accent-indigo)' }}
           >
             <Settings className="h-6 w-6" />
           </div>
@@ -237,7 +242,7 @@ export function AdminDashboard() {
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 lg:hidden"
-          style={{ background: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(4px)' }}
+          style={{ background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(4px)' }}
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -254,6 +259,8 @@ export function AdminDashboard() {
           setFilterStatus={setFilterStatus}
           selectedModel={selectedModel}
           setSelectedModel={setSelectedModel}
+          promptFilter={promptFilter}
+          setPromptFilter={setPromptFilter}
           modelsList={modelsList}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
@@ -294,11 +301,22 @@ export function AdminDashboard() {
                   <Menu className="h-5 w-5" />
                 </button>
                 <div className="flex items-center gap-2.5">
-                  <FileSpreadsheet className="h-5 w-5 hidden sm:block" style={{ color: 'var(--accent-emerald)' }} />
+                  <FileSpreadsheet className="h-5 w-5 hidden sm:block" style={{ color: 'var(--accent-indigo)' }} />
                   <h1 className="text-base lg:text-lg font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
                     <span className="hidden sm:inline">LEVIR-CD </span>Evaluation
                   </h1>
                 </div>
+
+                <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-md" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)' }}>
+                  <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    {selectedItem.image_a_name.replace('_A', '')}
+                  </span>
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'var(--border-strong)' }}></span>
+                  <span className="text-sm font-bold" style={{ color: 'var(--accent-indigo)' }}>
+                    {selectedItem.promptId}
+                  </span>
+                </div>
+
                 <span className="badge-admin">ADMIN</span>
               </div>
 
@@ -318,7 +336,7 @@ export function AdminDashboard() {
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium btn-ghost"
                 >
                   <LogOut className="h-3.5 w-3.5" />
-                  <span className="hidden sm:inline">Switch Role</span>
+                  <span className="hidden sm:inline">Logout</span>
                 </button>
               </div>
             </header>
@@ -415,7 +433,7 @@ export function AdminDashboard() {
                         </span>
                       </div>
                       <div className="p-6 text-sm font-mono whitespace-pre-wrap leading-relaxed select-text overflow-y-auto flex-1"
-                        style={{ color: 'var(--text-secondary)', background: 'rgba(2, 6, 23, 0.3)' }}
+                        style={{ color: 'var(--text-secondary)', background: 'var(--bg-card-highest)' }}
                       >
                         {selectedItem.prompt}
                       </div>
@@ -444,7 +462,7 @@ export function AdminDashboard() {
           </>
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center" style={{ color: 'var(--text-muted)' }}>
-            <RefreshCw className="h-8 w-8 animate-spin mb-4" style={{ color: 'var(--accent-emerald)' }} />
+            <RefreshCw className="h-8 w-8 animate-spin mb-4" style={{ color: 'var(--accent-indigo)' }} />
             <p className="font-medium">Loading evaluation workspace...</p>
           </div>
         )}
@@ -453,7 +471,7 @@ export function AdminDashboard() {
       {/* Settings Modal */}
       {showSettingsModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ background: 'rgba(2, 6, 23, 0.8)', backdropFilter: 'blur(8px)' }}
+          style={{ background: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(8px)' }}
         >
           <div className="glass-panel-solid rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col animate-fade-in-scale"
             style={{ boxShadow: '0 0 40px rgba(0,0,0,0.5)' }}
@@ -462,19 +480,39 @@ export function AdminDashboard() {
               style={{ borderBottom: '1px solid var(--border-subtle)' }}
             >
               <h2 className="text-lg font-bold flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
-                <Settings className="h-5 w-5" style={{ color: 'var(--accent-emerald)' }} />
+                <Settings className="h-5 w-5" style={{ color: 'var(--accent-indigo)' }} />
                 Evaluation Settings
               </h2>
+            </div>
+            
+            <div className="flex px-6 pt-3 gap-6 shrink-0" style={{ borderBottom: '1px solid var(--border-subtle)', background: 'var(--bg-elevated)' }}>
+              {['P1', 'P2', 'P3', 'P4'].map(promptId => (
+                <button
+                  key={promptId}
+                  onClick={() => setActiveSettingsPrompt(promptId)}
+                  className="pb-3 text-sm font-semibold transition-colors"
+                  style={{
+                    color: activeSettingsPrompt === promptId ? 'var(--accent-blue)' : 'var(--text-muted)',
+                    borderBottom: activeSettingsPrompt === promptId ? '2px solid var(--accent-blue)' : '2px solid transparent',
+                  }}
+                >
+                  Prompt {promptId}
+                </button>
+              ))}
             </div>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-6"
               style={{ background: 'var(--bg-deep)' }}
             >
               <div className="space-y-4">
-                {editingMetrics.map((metric, index) => (
+                {(editingMetrics[activeSettingsPrompt] || []).map((metric, index) => (
                   <div key={metric.id} className="p-5 rounded-xl space-y-4 relative glass-card">
                     <button
-                      onClick={() => setEditingMetrics(editingMetrics.filter(m => m.id !== metric.id))}
+                      onClick={() => {
+                        const updated = { ...editingMetrics };
+                        updated[activeSettingsPrompt] = updated[activeSettingsPrompt].filter(m => m.id !== metric.id);
+                        setEditingMetrics(updated);
+                      }}
                       className="absolute top-4 right-4 p-1.5 rounded-lg transition-colors"
                       style={{ color: 'var(--text-muted)' }}
                       onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--accent-rose)'; e.currentTarget.style.background = 'rgba(244, 63, 94, 0.1)'; }}
@@ -490,8 +528,9 @@ export function AdminDashboard() {
                           type="text"
                           value={metric.name}
                           onChange={(e) => {
-                            const updated = [...editingMetrics];
-                            updated[index] = { ...updated[index], name: e.target.value };
+                            const updated = { ...editingMetrics };
+                            updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                            updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], name: e.target.value };
                             setEditingMetrics(updated);
                           }}
                           className="w-full text-sm rounded-lg py-2 px-3 font-medium dark-input"
@@ -503,8 +542,9 @@ export function AdminDashboard() {
                           type="text"
                           value={metric.description || ''}
                           onChange={(e) => {
-                            const updated = [...editingMetrics];
-                            updated[index] = { ...updated[index], description: e.target.value };
+                            const updated = { ...editingMetrics };
+                            updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                            updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], description: e.target.value };
                             setEditingMetrics(updated);
                           }}
                           placeholder="e.g., Accuracy, clarity..."
@@ -518,12 +558,17 @@ export function AdminDashboard() {
 
               <button
                 onClick={() => {
-                  setEditingMetrics([...editingMetrics, {
-                    id: `metric_${Date.now()}`,
-                    name: 'New Metric',
-                    type: 'scale',
-                    min: 1, max: 5, defaultValue: 3, description: ''
-                  }]);
+                  const updated = { ...editingMetrics };
+                  updated[activeSettingsPrompt] = [
+                    ...(updated[activeSettingsPrompt] || []),
+                    {
+                      id: `metric_${Date.now()}`,
+                      name: 'New Metric',
+                      type: 'scale',
+                      min: 1, max: 5, defaultValue: 3, description: ''
+                    }
+                  ];
+                  setEditingMetrics(updated);
                 }}
                 className="w-full py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2"
                 style={{
@@ -531,9 +576,9 @@ export function AdminDashboard() {
                   color: 'var(--text-muted)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'var(--accent-emerald)';
-                  e.currentTarget.style.color = 'var(--accent-emerald-light)';
-                  e.currentTarget.style.background = 'rgba(16, 185, 129, 0.05)';
+                  e.currentTarget.style.borderColor = 'var(--accent-indigo)';
+                  e.currentTarget.style.color = 'var(--accent-indigo-light)';
+                  e.currentTarget.style.background = 'rgba(79, 70, 229, 0.05)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-default)';
@@ -556,7 +601,7 @@ export function AdminDashboard() {
               </button>
               <button
                 onClick={handleSaveSettings}
-                className="px-5 py-2.5 rounded-xl text-sm font-bold btn-emerald"
+                className="px-5 py-2.5 rounded-xl text-sm font-bold btn-indigo"
               >
                 Save Configuration
               </button>

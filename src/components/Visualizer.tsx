@@ -356,25 +356,16 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
               alt="After"
             />
 
-            <div
-              className="absolute inset-0 overflow-hidden pointer-events-none"
-              style={
-                swipeOrientation === 'vertical'
-                  ? { width: `${swipePosition}%` }
-                  : { height: `${swipePosition}%` }
-              }
-            >
-              <img
-                src={`/api/image?type=A&name=${selectedItem.image_a_name}`}
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-                style={
-                  swipeOrientation === 'vertical'
-                    ? { width: `${swipeContainerRef.current?.clientWidth || 0}px`, maxWidth: 'none' }
-                    : { height: `${swipeContainerRef.current?.clientHeight || 0}px`, maxHeight: 'none' }
-                }
-                alt="Before"
-              />
-            </div>
+            <img
+              src={`/api/image?type=A&name=${selectedItem.image_a_name}`}
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              style={{
+                clipPath: swipeOrientation === 'vertical' 
+                  ? `polygon(0 0, ${swipePosition}% 0, ${swipePosition}% 100%, 0 100%)`
+                  : `polygon(0 0, 100% 0, 100% ${swipePosition}%, 0 ${swipePosition}%)`
+              }}
+              alt="Before"
+            />
 
             <div
               className="absolute pointer-events-none z-10"

@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { isValidToken, extractToken } from '@/lib/auth';
 
-const EVAL_JSON_PATH = path.resolve('..', 'results', 'batch_results_20260526_173249_evaluated.json');
+const EVAL_JSON_PATH = path.resolve('..', 'results', 'batch_results_20260528_234016_evaluated.json');
 
 export async function POST(request: Request) {
   try {

@@ -63,10 +63,10 @@ export function EvaluationDisplay({ selectedItem, settings }: EvaluationDisplayP
         ) : (
           <>
             {/* Scores */}
-            {settings.metrics.length > 0 && (
+            {(settings.metricsByPrompt?.[selectedItem.promptId]?.length ?? 0) > 0 && (
               <div className="space-y-4">
                 <h3 className="text-label" style={{ color: 'var(--text-muted)' }}>Scores</h3>
-                {settings.metrics.map(metric => {
+                {settings.metricsByPrompt[selectedItem.promptId].map(metric => {
                   const score = selectedItem.scores?.[metric.id];
                   const min = metric.min || 1;
                   const max = metric.max || 5;
@@ -125,7 +125,7 @@ export function EvaluationDisplay({ selectedItem, settings }: EvaluationDisplayP
               </div>
               <div className="p-3 rounded-lg text-sm" 
                 style={{ 
-                  background: 'rgba(2, 6, 23, 0.3)', 
+                  background: 'var(--bg-card-highest)', 
                   border: '1px solid var(--border-subtle)',
                   color: selectedItem.notes ? 'var(--text-secondary)' : 'var(--text-faint)',
                 }}

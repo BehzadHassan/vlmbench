@@ -8,6 +8,8 @@ import { Sidebar } from '@/components/Sidebar';
 import { EvaluationDisplay } from '@/components/EvaluationDisplay';
 import { Visualizer } from '@/components/Visualizer';
 
+import { LoginPage } from '@/components/LoginPage';
+
 export function ViewerDashboard() {
   const { logout } = useAuth();
   const [data, setData] = useState<RowData[]>([]);
@@ -15,11 +17,12 @@ export function ViewerDashboard() {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
-  const [settings, setSettings] = useState<EvaluationSettings>({ metrics: [] });
+  const [settings, setSettings] = useState<EvaluationSettings>({ metricsByPrompt: {} });
 
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState<'all' | 'evaluated' | 'pending'>('all');
   const [selectedModel, setSelectedModel] = useState<string>('all');
+  const [promptFilter, setPromptFilter] = useState<string>('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [mainTab, setMainTab] = useState<'visualizer' | 'prompt' | 'response'>('visualizer');
 
@@ -27,6 +30,7 @@ export function ViewerDashboard() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
 
   const loadData = async () => {
     setLoading(true);
@@ -53,7 +57,7 @@ export function ViewerDashboard() {
 
   const selectedItem = data[selectedIndex];
 
-  useEffect(() => { setCurrentPage(1); }, [searchTerm, filterStatus, selectedModel]);
+  useEffect(() => { setCurrentPage(1); }, [searchTerm, filterStatus, selectedModel, promptFilter]);
 
   const modelsList = Array.from(new Set(data.map(d => d.model))).filter(Boolean);
 
@@ -67,7 +71,9 @@ export function ViewerDashboard() {
         filterStatus === 'evaluated' ? item.evaluated : !item.evaluated;
     const matchesModel =
       selectedModel === 'all' ? true : item.model === selectedModel;
-    return matchesSearch && matchesStatus && matchesModel;
+    const matchesPrompt =
+      promptFilter === 'all' ? true : item.promptId === promptFilter;
+    return matchesSearch && matchesStatus && matchesModel && matchesPrompt;
   });
 
   const itemsPerPage = 50;
@@ -118,11 +124,13 @@ export function ViewerDashboard() {
     <div className="flex h-screen overflow-hidden relative"
       style={{ background: 'var(--bg-deep)', color: 'var(--text-primary)' }}
     >
+      {showLogin && <LoginPage onClose={() => setShowLogin(false)} />}
+      
       {/* Mobile overlay */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 lg:hidden"
-          style={{ background: 'rgba(2, 6, 23, 0.7)', backdropFilter: 'blur(4px)' }}
+          style={{ background: 'rgba(0, 0, 0, 0.4)', backdropFilter: 'blur(4px)' }}
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
@@ -139,6 +147,8 @@ export function ViewerDashboard() {
           setFilterStatus={setFilterStatus}
           selectedModel={selectedModel}
           setSelectedModel={setSelectedModel}
+          promptFilter={promptFilter}
+          setPromptFilter={setPromptFilter}
           modelsList={modelsList}
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
@@ -184,14 +194,25 @@ export function ViewerDashboard() {
                     <span className="hidden sm:inline">LEVIR-CD </span>Evaluation
                   </h1>
                 </div>
+                
+                <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-md" style={{ background: 'var(--bg-elevated)', border: '1px solid var(--border-subtle)' }}>
+                  <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    {selectedItem.image_a_name.replace('_A', '')}
+                  </span>
+                  <span className="w-1 h-1 rounded-full" style={{ background: 'var(--border-strong)' }}></span>
+                  <span className="text-sm font-bold" style={{ color: 'var(--accent-indigo)' }}>
+                    {selectedItem.promptId}
+                  </span>
+                </div>
+                
                 <span className="badge-viewer">VIEWER</span>
               </div>
               <button
-                onClick={logout}
+                onClick={() => setShowLogin(true)}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium btn-ghost"
               >
                 <LogOut className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">Switch Role</span>
+                <span className="hidden sm:inline">Login as Admin</span>
               </button>
             </header>
 
@@ -287,7 +308,7 @@ export function ViewerDashboard() {
                         </span>
                       </div>
                       <div className="p-6 text-sm font-mono whitespace-pre-wrap leading-relaxed select-text overflow-y-auto flex-1"
-                        style={{ color: 'var(--text-secondary)', background: 'rgba(2, 6, 23, 0.3)' }}
+                        style={{ color: 'var(--text-secondary)', background: 'var(--bg-card-highest)' }}
                       >
                         {selectedItem.prompt}
                       </div>
