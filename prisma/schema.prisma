@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Evaluation {
+  id          String   @id // e.g., "val_1_A__val_1_B__qwen2-vl-2b__P1"
+  evaluated   Boolean  @default(false)
+  scores      Json?    // Store scores as a JSON object
+  notes       String?  @db.Text
+  evaluatedAt DateTime?
+  flagged     Boolean  @default(false)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+
+model Setting {
+  id              Int    @id @default(1) // Singleton pattern
+  metricsByPrompt Json   // Store metrics configuration
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AuditLog {
+  id        Int      @id @default(autoincrement())
+  action    String   // e.g., 'SETTING_UPDATED', 'EVALUATION_UPDATED', 'EVALUATIONS_CLEARED'
+  details   Json?    // Store what changed
+  createdAt DateTime @default(now())
+}
+

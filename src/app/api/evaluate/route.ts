@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { isValidToken, extractToken } from '@/lib/auth';
-
-const EVAL_JSON_PATH = path.join(process.cwd(), 'data', 'results', 'batch_results_20260528_234016_evaluated.json');
+import prisma from '@/lib/prisma';
 
 export async function POST(request: Request) {
   try {
@@ -20,34 +17,49 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing row ID' }, { status: 400 });
     }
 
-    let evaluations: Record<string, any> = {};
-    if (fs.existsSync(EVAL_JSON_PATH)) {
-      const evalContent = fs.readFileSync(EVAL_JSON_PATH, 'utf-8');
-      try {
-        evaluations = JSON.parse(evalContent);
-      } catch (e) {
-        console.error('Failed to parse evaluations JSON, starting fresh', e);
+    // Fetch existing to merge fields if only partial update is sent
+    const existing = await prisma.evaluation.findUnique({ where: { id } });
+
+    // Ensure we handle scores as an object properly for Prisma Json
+    const scoresData = scores !== undefined ? scores : (existing?.scores || {});
+    
+    await prisma.evaluation.upsert({
+      where: { id },
+      update: {
+        evaluated: evaluated !== undefined ? evaluated : (existing?.evaluated || false),
+        scores: scoresData,
+        notes: notes !== undefined ? notes : (existing?.notes || ''),
+        evaluatedAt: evaluated !== undefined ? new Date() : existing?.evaluatedAt,
+        flagged: flagged !== undefined ? flagged : !!existing?.flagged,
+      },
+      create: {
+        id,
+        evaluated: evaluated !== undefined ? evaluated : false,
+        scores: scoresData,
+        notes: notes !== undefined ? notes : '',
+        evaluatedAt: evaluated !== undefined ? new Date() : null,
+        flagged: flagged !== undefined ? flagged : false,
       }
+    });
+
+    // Add Audit Log
+    let action = 'EVALUATION_UPDATED';
+    if (flagged !== undefined && !!existing?.flagged !== flagged) {
+      action = 'RECORD_FLAGGED';
     }
 
-    // Update or add the evaluation
-    const existing = evaluations[id] || {};
-    evaluations[id] = {
-      evaluated: evaluated !== undefined ? evaluated : (existing.evaluated || false),
-      scores: scores !== undefined ? scores : (existing.scores || {}),
-      notes: notes !== undefined ? notes : (existing.notes || ''),
-      evaluatedAt: evaluated !== undefined ? new Date().toISOString() : existing.evaluatedAt,
-      flagged: flagged !== undefined ? flagged : !!existing.flagged,
-    };
-
-    // Ensure results directory exists
-    const resultsDir = path.dirname(EVAL_JSON_PATH);
-    if (!fs.existsSync(resultsDir)) {
-      fs.mkdirSync(resultsDir, { recursive: true });
-    }
-
-    // Write back to file
-    fs.writeFileSync(EVAL_JSON_PATH, JSON.stringify(evaluations, null, 2), 'utf-8');
+    await prisma.auditLog.create({
+      data: {
+        action,
+        details: {
+          id,
+          scores: scores !== undefined ? scores : null,
+          notes: notes !== undefined ? notes : null,
+          evaluated: evaluated !== undefined ? evaluated : null,
+          flagged: flagged !== undefined ? flagged : null,
+        }
+      }
+    });
 
     return NextResponse.json({ success: true });
   } catch (error: any) {
@@ -67,9 +79,15 @@ export async function DELETE(request: Request) {
     const clearAll = searchParams.get('clearAll') === 'true';
 
     if (clearAll) {
-      if (fs.existsSync(EVAL_JSON_PATH)) {
-        fs.writeFileSync(EVAL_JSON_PATH, JSON.stringify({}, null, 2), 'utf-8');
-      }
+      await prisma.evaluation.deleteMany({});
+      
+      await prisma.auditLog.create({
+        data: {
+          action: 'EVALUATIONS_CLEARED',
+          details: { cleared: true }
+        }
+      });
+      
       return NextResponse.json({ success: true, message: 'All evaluations cleared' });
     }
 

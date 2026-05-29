@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { isValidToken, extractToken } from '@/lib/auth';
-
-const SETTINGS_JSON_PATH = path.join(process.cwd(), 'data', 'results', 'evaluation_settings_multiprompt.json');
+import prisma from '@/lib/prisma';
 
 const DEFAULT_METRICS = [
   {
@@ -37,19 +34,18 @@ const DEFAULT_SETTINGS = {
 
 export async function GET() {
   try {
-    if (!fs.existsSync(SETTINGS_JSON_PATH)) {
-      // Create with default settings
-      const dir = path.dirname(SETTINGS_JSON_PATH);
-      if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true });
-      }
-      fs.writeFileSync(SETTINGS_JSON_PATH, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf-8');
+    const setting = await prisma.setting.findFirst({ where: { id: 1 } });
+    if (!setting) {
+      await prisma.setting.create({
+        data: {
+          id: 1,
+          metricsByPrompt: DEFAULT_SETTINGS.metricsByPrompt,
+        }
+      });
       return NextResponse.json(DEFAULT_SETTINGS);
     }
 
-    const settingsContent = fs.readFileSync(SETTINGS_JSON_PATH, 'utf-8');
-    const settings = JSON.parse(settingsContent);
-    return NextResponse.json(settings);
+    return NextResponse.json({ metricsByPrompt: setting.metricsByPrompt });
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
@@ -71,16 +67,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid metricsByPrompt object' }, { status: 400 });
     }
 
-    const newSettings = { metricsByPrompt };
+    const setting = await prisma.setting.upsert({
+      where: { id: 1 },
+      update: { metricsByPrompt },
+      create: {
+        id: 1,
+        metricsByPrompt
+      }
+    });
 
-    const dir = path.dirname(SETTINGS_JSON_PATH);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
+    await prisma.auditLog.create({
+      data: {
+        action: 'SETTING_UPDATED',
+        details: { metricsByPrompt }
+      }
+    });
 
-    fs.writeFileSync(SETTINGS_JSON_PATH, JSON.stringify(newSettings, null, 2), 'utf-8');
-
-    return NextResponse.json({ success: true, settings: newSettings });
+    return NextResponse.json({ success: true, settings: { metricsByPrompt: setting.metricsByPrompt } });
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });

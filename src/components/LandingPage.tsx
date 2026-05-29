@@ -666,8 +666,24 @@ export function LandingPage() {
           </div>
           
           {/* Footer */}
-          <div className="mt-16 pb-8 text-center text-sm font-medium" style={{ color: '#475569' }}>
-            © {new Date().getFullYear()} LEVIR-CD Evaluation Suite • Powered by <span style={{ color: '#818cf8' }}>Qwen2-VL-2B-Instruct</span>
+          <div className="mt-16 pb-8 text-center text-sm font-medium flex flex-col items-center gap-2" style={{ color: '#475569' }}>
+            <div>© {new Date().getFullYear()} LEVIR-CD Evaluation Suite • Powered by <span style={{ color: '#818cf8' }}>Qwen2-VL-2B-Instruct</span></div>
+            <div className="text-xs px-4 py-1.5 rounded-full mt-2 transition-all duration-300 hover:-translate-y-0.5" 
+              style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', color: '#64748b' }}
+            >
+              Developed by{' '}
+              <a 
+                href="https://behzadhassan-dev.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-bold tracking-wide transition-colors duration-300"
+                style={{ color: '#38bdf8' }}
+                onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#38bdf8'}
+              >
+                Behzad Hassan
+              </a>
+            </div>
           </div>
 
         </div>
