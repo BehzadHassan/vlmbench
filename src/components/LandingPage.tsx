@@ -347,7 +347,7 @@ export function LandingPage() {
               }}
             >
               <Sparkles className="w-4 h-4" style={{ color: '#818cf8' }} />
-              VLM Change Detection Evaluation Platform
+              VLMBench · Change Detection Evaluation
             </div>
             
             {/* Logo Icon */}
@@ -667,7 +667,7 @@ export function LandingPage() {
           
           {/* Footer */}
           <div className="mt-16 pb-8 text-center text-sm font-medium flex flex-col items-center gap-2" style={{ color: '#475569' }}>
-            <div>© {new Date().getFullYear()} LEVIR-CD Evaluation Suite • Powered by <span style={{ color: '#818cf8' }}>Qwen2-VL-2B-Instruct</span></div>
+            <div>© {new Date().getFullYear()} VLMBench · Change Detection Evaluation • Powered by <span style={{ color: '#818cf8' }}>Qwen2-VL-2B-Instruct</span></div>
             <div className="text-xs px-4 py-1.5 rounded-full mt-2 transition-all duration-300 hover:-translate-y-0.5" 
               style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', color: '#64748b' }}
             >

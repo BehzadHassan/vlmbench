@@ -70,7 +70,7 @@ export function LoginPage({ onClose }: LoginPageProps) {
               <Satellite className="w-8 h-8" style={{ color: 'var(--accent-indigo-light)' }} />
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>
-              LEVIR-CD Evaluation
+              VLMBench
             </h1>
             <p className="text-sm md:text-base" style={{ color: 'var(--text-muted)' }}>
               Vision-Language Model Change Detection Assessment

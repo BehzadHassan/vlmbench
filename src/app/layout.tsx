@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LEVIR-CD VLM Evaluation Dashboard",
+  title: "VLMBench · Change Detection Evaluation",
   description: "Evaluate remote sensing change detection responses from Vision-Language Models on the LEVIR-CD dataset.",
 };
 
