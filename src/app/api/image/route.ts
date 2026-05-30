@@ -27,12 +27,7 @@ export async function GET(request: Request) {
     const fileName = `${baseName}.png`;
     let filePath = path.join(process.cwd(), 'data', 'val', type, fileName);
 
-    if (type === 'label') {
-      const updatedFilePath = path.join(process.cwd(), 'data', 'val', 'updated_label', fileName);
-      if (fs.existsSync(updatedFilePath)) {
-        filePath = updatedFilePath;
-      }
-    }
+
 
     if (!fs.existsSync(filePath)) {
       return NextResponse.json({ error: `Image file not found at ${filePath}` }, { status: 404 });
