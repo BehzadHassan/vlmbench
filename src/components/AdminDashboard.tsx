@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Settings, RefreshCw, Eye, SlidersHorizontal, FileSpreadsheet, Plus, Trash2, Menu, LogOut, Shield, X } from 'lucide-react';
+import { Settings, RefreshCw, Eye, SlidersHorizontal, FileSpreadsheet, Plus, Trash2, Menu, LogOut, Shield, X, Copy } from 'lucide-react';
 import { Metric, EvaluationSettings, RowData } from '@/types';
 import { useAuth } from '@/context/AuthContext';
 import { Sidebar } from '@/components/Sidebar';
@@ -33,6 +33,8 @@ export function AdminDashboard() {
   const [formScores, setFormScores] = useState<Record<string, number>>({});
   const [formNotes, setFormNotes] = useState('');
   const [isSaving, setIsSaving] = useState(false);
+  const [isSavingSettings, setIsSavingSettings] = useState(false);
+  const [isClearingAll, setIsClearingAll] = useState(false);
 
   // View Modes
   const [viewMode, setViewMode] = useState<'side-by-side' | 'swipe'>('side-by-side');
@@ -250,6 +252,7 @@ export function AdminDashboard() {
   };
 
   const executeClearAll = async () => {
+    setIsClearingAll(true);
     try {
       const response = await fetch('/api/evaluate?clearAll=true', {
         method: 'DELETE',
@@ -269,10 +272,13 @@ export function AdminDashboard() {
     } catch (err: any) {
       showToast('Error', err.message || 'Error clearing evaluations', 'error');
       setShowClearConfirm(false);
+    } finally {
+      setIsClearingAll(false);
     }
   };
 
   const handleSaveSettings = async () => {
+    setIsSavingSettings(true);
     try {
       const response = await fetch('/api/settings', {
         method: 'POST',
@@ -286,6 +292,8 @@ export function AdminDashboard() {
       showToast('Settings Saved', 'Configuration updated successfully.', 'success');
     } catch (err: any) {
       showToast('Error', err.message || 'Error saving settings', 'error');
+    } finally {
+      setIsSavingSettings(false);
     }
   };
 
@@ -595,35 +603,101 @@ export function AdminDashboard() {
                       <Trash2 className="h-4 w-4" />
                     </button>
 
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Metric Name</label>
-                        <input
-                          type="text"
-                          value={metric.name}
-                          onChange={(e) => {
-                            const updated = { ...editingMetrics };
-                            updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
-                            updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], name: e.target.value };
-                            setEditingMetrics(updated);
-                          }}
-                          className="w-full text-sm rounded-lg py-2 px-3 font-medium dark-input"
-                        />
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div>
+                          <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Metric Name</label>
+                          <input
+                            type="text"
+                            value={metric.name}
+                            onChange={(e) => {
+                              const updated = { ...editingMetrics };
+                              updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                              updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], name: e.target.value };
+                              setEditingMetrics(updated);
+                            }}
+                            className="w-full text-sm rounded-lg py-2 px-3 font-medium dark-input"
+                          />
+                        </div>
+                        <div>
+                          <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Description</label>
+                          <input
+                            type="text"
+                            value={metric.description || ''}
+                            onChange={(e) => {
+                              const updated = { ...editingMetrics };
+                              updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                              updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], description: e.target.value };
+                              setEditingMetrics(updated);
+                            }}
+                            placeholder="e.g., Accuracy, clarity..."
+                            className="w-full text-sm rounded-lg py-2 px-3 dark-input"
+                          />
+                        </div>
                       </div>
                       <div>
-                        <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Description</label>
+                        <label className="text-label mb-1.5 flex items-center gap-1.5" style={{ color: 'var(--text-muted)' }}>
+                          Scoring Explainer <span className="text-[10px] bg-black/10 dark:bg-white/10 px-1.5 py-0.5 rounded">Optional</span>
+                        </label>
                         <input
                           type="text"
-                          value={metric.description || ''}
+                          value={metric.rangeExplainer || ''}
                           onChange={(e) => {
                             const updated = { ...editingMetrics };
                             updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
-                            updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], description: e.target.value };
+                            updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], rangeExplainer: e.target.value };
                             setEditingMetrics(updated);
                           }}
-                          placeholder="e.g., Accuracy, clarity..."
+                          placeholder="e.g., 5=Excellent, 1=Poor"
                           className="w-full text-sm rounded-lg py-2 px-3 dark-input"
                         />
+                      </div>
+                      <div className="grid grid-cols-3 gap-4">
+                        <div>
+                          <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Min Value</label>
+                          <input
+                            type="number"
+                            value={metric.min ?? ''}
+                            onChange={(e) => {
+                              const updated = { ...editingMetrics };
+                              updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                              const val = e.target.value;
+                              updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], min: val === '' ? undefined : Number(val) };
+                              setEditingMetrics(updated);
+                            }}
+                            className="w-full text-sm rounded-lg py-2 px-3 dark-input"
+                          />
+                        </div>
+                        <div>
+                          <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Max Value</label>
+                          <input
+                            type="number"
+                            value={metric.max ?? ''}
+                            onChange={(e) => {
+                              const updated = { ...editingMetrics };
+                              updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                              const val = e.target.value;
+                              updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], max: val === '' ? undefined : Number(val) };
+                              setEditingMetrics(updated);
+                            }}
+                            className="w-full text-sm rounded-lg py-2 px-3 dark-input"
+                          />
+                        </div>
+                        <div>
+                          <label className="text-label mb-1.5 block" style={{ color: 'var(--text-muted)' }}>Default Value</label>
+                          <input
+                            type="number"
+                            value={metric.defaultValue ?? ''}
+                            onChange={(e) => {
+                              const updated = { ...editingMetrics };
+                              updated[activeSettingsPrompt] = [...(updated[activeSettingsPrompt] || [])];
+                              const val = e.target.value;
+                              updated[activeSettingsPrompt][index] = { ...updated[activeSettingsPrompt][index], defaultValue: val === '' ? '' : Number(val) };
+                              setEditingMetrics(updated);
+                            }}
+                            className="w-full text-sm rounded-lg py-2 px-3 dark-input"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -639,7 +713,7 @@ export function AdminDashboard() {
                       id: `metric_${Date.now()}`,
                       name: 'New Metric',
                       type: 'scale',
-                      min: 1, max: 5, defaultValue: 3, description: ''
+                      min: 0, max: 5, defaultValue: 3, description: ''
                     }
                   ];
                   setEditingMetrics(updated);
@@ -661,6 +735,36 @@ export function AdminDashboard() {
                 }}
               >
                 <Plus className="h-4 w-4" /> Add Score Metric
+              </button>
+
+              <button
+                onClick={() => {
+                  const currentMetrics = [...(editingMetrics[activeSettingsPrompt] || [])];
+                  const updated = { ...editingMetrics };
+                  ['P1', 'P2', 'P3', 'P4'].forEach(prompt => {
+                    if (prompt !== activeSettingsPrompt) {
+                      updated[prompt] = JSON.parse(JSON.stringify(currentMetrics));
+                    }
+                  });
+                  setEditingMetrics(updated);
+                  showToast('Copied', `Metrics from ${activeSettingsPrompt} applied to all prompts.`, 'success');
+                }}
+                className="w-full py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-2 mt-2"
+                style={{
+                  border: '1px solid var(--border-default)',
+                  background: 'var(--bg-elevated)',
+                  color: 'var(--text-primary)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--accent-indigo)';
+                  e.currentTarget.style.background = 'rgba(99, 102, 241, 0.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--border-default)';
+                  e.currentTarget.style.background = 'var(--bg-elevated)';
+                }}
+              >
+                <Copy className="h-4 w-4" /> Apply these metrics to all prompts
               </button>
             </div>
 
@@ -685,9 +789,14 @@ export function AdminDashboard() {
                 </button>
                 <button
                   onClick={handleSaveSettings}
-                  className="px-5 py-2.5 rounded-xl text-sm font-bold btn-indigo"
+                  disabled={isSavingSettings}
+                  className="px-5 py-2.5 rounded-xl text-sm font-bold btn-indigo disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[160px]"
                 >
-                  Save Configuration
+                  {isSavingSettings ? (
+                    <><RefreshCw className="w-4 h-4 mr-2 animate-spin" /> Saving...</>
+                  ) : (
+                    'Save Configuration'
+                  )}
                 </button>
               </div>
             </div>
@@ -721,10 +830,15 @@ export function AdminDashboard() {
               </button>
               <button
                 onClick={executeClearAll}
-                className="px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg"
+                disabled={isClearingAll}
+                className="px-5 py-2.5 rounded-xl text-sm font-bold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[130px]"
                 style={{ background: 'var(--accent-rose)', color: 'white' }}
               >
-                Yes, Clear All
+                {isClearingAll ? (
+                  <><RefreshCw className="w-4 h-4 mr-2 animate-spin" /> Clearing...</>
+                ) : (
+                  'Yes, Clear All'
+                )}
               </button>
             </div>
           </div>

@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { CheckCircle, Clock, MessageSquare } from 'lucide-react';
+import React, { useState } from 'react';
+import { CheckCircle, Clock, MessageSquare, Info } from 'lucide-react';
 import { RowData, EvaluationSettings } from '../types';
 
 interface EvaluationDisplayProps {
@@ -10,6 +10,8 @@ interface EvaluationDisplayProps {
 }
 
 export function EvaluationDisplay({ selectedItem, settings }: EvaluationDisplayProps) {
+  const [expandedInfo, setExpandedInfo] = useState<Record<string, boolean>>({});
+
   if (!selectedItem) {
     return (
       <div className="w-full h-full flex items-center justify-center" style={{ color: 'var(--text-muted)' }}>
@@ -66,19 +68,31 @@ export function EvaluationDisplay({ selectedItem, settings }: EvaluationDisplayP
             {(settings.metricsByPrompt?.[selectedItem.promptId]?.length ?? 0) > 0 && (
               <div className="space-y-4">
                 <h3 className="text-label" style={{ color: 'var(--text-muted)' }}>Scores</h3>
-                {settings.metricsByPrompt[selectedItem.promptId].map(metric => {
+                {settings.metricsByPrompt[selectedItem.promptId].map((metric, index) => {
                   const score = selectedItem.scores?.[metric.id];
-                  const min = metric.min || 1;
-                  const max = metric.max || 5;
+                  const min = metric.min ?? 0;
+                  const max = metric.max ?? 5;
                   const percentage = score !== undefined ? ((score - min) / (max - min)) * 100 : 0;
 
                   return (
-                    <div key={metric.id} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                          {metric.name}
+                    <div key={metric.id} className="space-y-3 p-4 rounded-xl" style={{ backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-subtle)' }}>
+                      <div className="flex justify-between items-start gap-3">
+                        <span className="text-sm font-medium flex items-center gap-1.5" style={{ color: 'var(--text-primary)' }}>
+                          <span>
+                            <span className="font-bold mr-1.5" style={{ color: 'var(--accent-indigo-light)' }}>M{index + 1}</span>
+                            {metric.name}
+                          </span>
+                          {metric.rangeExplainer && (
+                            <button
+                              onClick={() => setExpandedInfo(prev => ({ ...prev, [metric.id]: !prev[metric.id] }))}
+                              className="p-0.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer"
+                              title="Show scoring info"
+                            >
+                              <Info className="w-3.5 h-3.5 text-[var(--text-muted)]" />
+                            </button>
+                          )}
                         </span>
-                        <span className="text-sm font-bold tabular-nums px-2.5 py-0.5 rounded-md"
+                        <span className="text-sm font-bold tabular-nums px-2.5 py-0.5 rounded-md shrink-0 whitespace-nowrap"
                           style={{
                             background: 'rgba(99, 102, 241, 0.15)',
                             color: 'var(--accent-indigo-light)',
@@ -89,6 +103,19 @@ export function EvaluationDisplay({ selectedItem, settings }: EvaluationDisplayP
                       </div>
                       {metric.description && (
                         <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{metric.description}</p>
+                      )}
+                      {metric.rangeExplainer && expandedInfo[metric.id] && (
+                        <div className="text-xs p-2.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card-highest)] text-[var(--text-secondary)]">
+                          {metric.rangeExplainer.includes(',') ? (
+                            <ul className="list-disc pl-4 space-y-1">
+                              {metric.rangeExplainer.split(',').map((item, i) => (
+                                <li key={i}>{item.trim()}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            metric.rangeExplainer
+                          )}
+                        </div>
                       )}
                       {/* Score bar */}
                       <div className="w-full h-2 rounded-full overflow-hidden"

@@ -6,6 +6,7 @@ export interface Metric {
   max?: number;
   defaultValue: number | string;
   description?: string;
+  rangeExplainer?: string;
 }
 
 export interface EvaluationSettings {

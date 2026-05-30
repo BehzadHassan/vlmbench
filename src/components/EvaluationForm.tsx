@@ -1,5 +1,5 @@
-import React from 'react';
-import { Save } from 'lucide-react';
+import React, { useState } from 'react';
+import { Save, Info } from 'lucide-react';
 import { RowData, EvaluationSettings, Metric } from '../types';
 
 interface EvaluationFormProps {
@@ -16,6 +16,7 @@ interface EvaluationFormProps {
 }
 
 export function EvaluationForm(props: EvaluationFormProps) {
+  const [expandedInfo, setExpandedInfo] = useState<Record<string, boolean>>({});
   const {
     selectedItem, settings, formScores, setFormScores,
     formNotes, setFormNotes, isSaving, onSave, onClear, onToggleFlag
@@ -63,21 +64,33 @@ export function EvaluationForm(props: EvaluationFormProps) {
             No metrics defined for {selectedItem.promptId}. Please add metrics in Settings.
           </div>
         ) : (
-          settings.metricsByPrompt[selectedItem.promptId].map(metric => {
-            const currentValue = Number(formScores[metric.id] || metric.defaultValue);
-            const min = metric.min || 1;
-            const max = metric.max || 5;
+          settings.metricsByPrompt[selectedItem.promptId].map((metric, index) => {
+            const currentValue = Number(formScores[metric.id] ?? metric.defaultValue);
+            const min = metric.min ?? 0;
+            const max = metric.max ?? 5;
             const percentage = ((currentValue - min) / (max - min)) * 100;
             const thumbColor = metric.id === 'correctness' ? 'var(--accent-purple)' : metric.id === 'completeness' ? 'var(--accent-amber-slider)' : 'var(--accent-indigo)';
             const trackColor = metric.id === 'correctness' ? 'var(--accent-purple-bg)' : metric.id === 'completeness' ? 'var(--accent-amber-bg)' : 'var(--bg-card-highest)';
             
             return (
-              <div key={metric.id} className="space-y-3">
-                <div className="flex justify-between items-end">
-                  <label className="text-sm font-semibold tracking-tight" style={{ color: 'var(--text-primary)' }}>
-                    {metric.name}
+              <div key={metric.id} className="space-y-3 p-4 rounded-xl" style={{ backgroundColor: 'rgba(255,255,255,0.02)', border: '1px solid var(--border-subtle)' }}>
+                <div className="flex justify-between items-start gap-3">
+                  <label className="text-sm font-semibold tracking-tight flex items-center gap-1.5" style={{ color: 'var(--text-primary)' }}>
+                    <span>
+                      <span className="font-bold mr-1.5" style={{ color: thumbColor }}>M{index + 1}</span>
+                      {metric.name}
+                    </span>
+                    {metric.rangeExplainer && (
+                      <button
+                        onClick={() => setExpandedInfo(prev => ({ ...prev, [metric.id]: !prev[metric.id] }))}
+                        className="p-0.5 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer"
+                        title="Show scoring info"
+                      >
+                        <Info className="w-3.5 h-3.5 text-[var(--text-muted)]" />
+                      </button>
+                    )}
                   </label>
-                  <span className="text-sm font-bold tabular-nums px-2 py-0.5 rounded"
+                  <span className="text-sm font-bold tabular-nums px-2 py-0.5 rounded shrink-0 whitespace-nowrap"
                     style={{
                       background: metric.id === 'correctness' ? 'rgba(127, 119, 221, 0.15)' : metric.id === 'completeness' ? 'rgba(239, 159, 39, 0.15)' : 'rgba(99, 102, 241, 0.15)',
                       color: thumbColor
@@ -88,6 +101,19 @@ export function EvaluationForm(props: EvaluationFormProps) {
                 </div>
                 {metric.description && (
                   <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{metric.description}</p>
+                )}
+                {metric.rangeExplainer && expandedInfo[metric.id] && (
+                  <div className="text-xs p-2.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-card-highest)] text-[var(--text-secondary)]">
+                    {metric.rangeExplainer.includes(',') ? (
+                      <ul className="list-disc pl-4 space-y-1">
+                        {metric.rangeExplainer.split(',').map((item, i) => (
+                          <li key={i}>{item.trim()}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      metric.rangeExplainer
+                    )}
+                  </div>
                 )}
                 {metric.type === 'scale' && (
                   <div className="pt-2">
@@ -101,7 +127,7 @@ export function EvaluationForm(props: EvaluationFormProps) {
                         ...prev,
                         [metric.id]: Number(e.target.value)
                       }))}
-                      className="w-full"
+                      className="w-full cursor-pointer"
                       style={{
                         background: `linear-gradient(to right, ${thumbColor} ${percentage}%, ${trackColor} ${percentage}%)`,
                         '--slider-thumb': thumbColor,

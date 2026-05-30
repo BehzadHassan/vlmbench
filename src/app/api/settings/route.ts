@@ -4,22 +4,104 @@ import prisma from '@/lib/prisma';
 
 const DEFAULT_METRICS = [
   {
-    id: 'correctness',
-    name: 'Correctness',
+    id: 'm1_accuracy',
+    name: 'Change Detection Accuracy',
     type: 'scale',
-    min: 1,
+    min: 0,
     max: 5,
     defaultValue: 3,
-    description: 'Overall accuracy of the change detection response.'
+    description: 'Measures if the model correctly identified the overall change status.',
+    rangeExplainer: '5=Correct w/ confidence, 4=Correct but hedging, 3=Vague, 2=Uncertain/Partial, 1=Incorrect.'
   },
   {
-    id: 'completeness',
+    id: 'm2_type',
+    name: 'Change Type Correctness',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Measures if the model correctly classified the type of change.',
+    rangeExplainer: '5=Exact correct, 4=Broadly correct, 3=Partially correct, 2=Wrong type but acknowledged change, 1=Completely wrong.'
+  },
+  {
+    id: 'm3_spatial',
+    name: 'Spatial Localization',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Accuracy of the location description.',
+    rangeExplainer: '5=Correct w/ 2 directions & landmark, 4=Correct w/ 1 direction, 3=Right area but imprecise, 2=Vague/Center only, 1=Wrong location.'
+  },
+  {
+    id: 'm4_scale',
+    name: 'Scale Estimation',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Accuracy of the spatial scale estimate.',
+    rangeExplainer: '5=Correct category, 4=Off by small margin, 3=Off by 1 category, 2=Off by 1 category but strong confidence, 1=Completely wrong.'
+  },
+  {
+    id: 'm5_completeness',
     name: 'Completeness',
     type: 'scale',
-    min: 1,
-    max: 10,
-    defaultValue: 5,
-    description: 'How well the response addressed all prompts (what, where, how large).'
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Whether the model detected and reported all significant changes.',
+    rangeExplainer: '5=All detected, 4=Most detected, 3=Half detected, 2=Only one minor detected, 1=No meaningful change detected.'
+  },
+  {
+    id: 'm6_hallucination',
+    name: 'Hallucination',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 0,
+    description: 'Degree to which the model fabricated unverified elements.',
+    rangeExplainer: '0=No hallucination, 1=Very minor, 2=Mild, 3=Moderate, 4=Severe, 5=Critical/Entirely hallucinated.'
+  },
+  {
+    id: 'm7_unchanged',
+    name: 'Unchanged Element Accuracy',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Accuracy of identifying elements that remained unchanged.',
+    rangeExplainer: '5=All verified, 4=Mostly correct, 3=Mixed, 2=Mostly wrong, 1=Completely wrong.'
+  },
+  {
+    id: 'm8_grounding',
+    name: 'Visual Grounding',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Whether claims are grounded in specific, observable visual features.',
+    rangeExplainer: '5=Every major claim supported, 4=Most grounded, 3=Half grounded, 2=Very few grounded, 1=Entirely abstract.'
+  },
+  {
+    id: 'm9_consistency',
+    name: 'Factual Consistency',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Internal consistency of the response across steps/sections.',
+    rangeExplainer: '5=Fully consistent, 4=One minor inconsistency, 3=Moderate contradiction, 2=Multiple contradictions, 1=Severe contradiction.'
+  },
+  {
+    id: 'm10_utility',
+    name: 'Response Utility',
+    type: 'scale',
+    min: 0,
+    max: 5,
+    defaultValue: 3,
+    description: 'Holistic measure of practical usefulness for an analyst.',
+    rangeExplainer: '5=Act directly with confidence, 4=Mostly useful, 3=Partially useful, 2=Mostly not useful, 1=Misleading or useless.'
   }
 ];
 

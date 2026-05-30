@@ -139,6 +139,15 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
     );
   };
 
+  const renderDirectionHints = () => (
+    <div className="absolute inset-0 pointer-events-none select-none z-10 opacity-70">
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 bg-black/50 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-md border border-white/10">N</div>
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-md border border-white/10">S</div>
+      <div className="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-md border border-white/10">E</div>
+      <div className="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white text-[10px] font-bold px-1.5 py-0.5 rounded backdrop-blur-md border border-white/10">W</div>
+    </div>
+  );
+
   const containerClass = isModalContext 
     ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl mx-auto" 
     : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full";
@@ -165,6 +174,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                   className="w-full h-full object-cover pointer-events-none select-none"
                   loading="lazy"
                 />
+                {renderDirectionHints()}
                 {renderMagnifier('A')}
               </div>
             </div>
@@ -185,6 +195,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                   className="w-full h-full object-cover pointer-events-none select-none"
                   loading="lazy"
                 />
+                {renderDirectionHints()}
                 {renderMagnifier('B')}
               </div>
             </div>
@@ -219,6 +230,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                       className="w-full h-full object-cover invert pointer-events-none select-none"
                       loading="lazy"
                     />
+                    {renderDirectionHints()}
                     {renderMagnifier('label')}
                   </>
                 )}
@@ -239,6 +251,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                         opacity: maskOpacity / 100,
                       }}
                     />
+                    {renderDirectionHints()}
                     {renderMagnifier('composite')}
                   </>
                 )}
@@ -255,6 +268,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                       className="absolute inset-0 w-full h-full object-cover mix-blend-difference pointer-events-none select-none"
                       alt="Difference Blend"
                     />
+                    {renderDirectionHints()}
                     {renderMagnifier('difference')}
                   </>
                 )}
@@ -386,6 +400,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
               }}
               alt="Before"
             />
+            {renderDirectionHints()}
 
             <div
               className="absolute pointer-events-none z-10"
