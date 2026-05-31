@@ -19,6 +19,22 @@ model Evaluation {
   updatedAt   DateTime @updatedAt
 }
 
+model Prediction {
+  id           String @id @default(uuid())
+  image_a_name String
+  image_b_name String
+  model        String
+  timestamp    String
+  
+  response_P1  String @db.Text
+  response_P2  String @db.Text
+  response_P3  String @db.Text
+  response_P4  String @db.Text
+
+  createdAt    DateTime @default(now())
+}
+
+
 
 model Setting {
   id              Int    @id @default(1) // Singleton pattern

@@ -377,7 +377,7 @@ export function LandingPage() {
                 A sophisticated evaluation platform for reviewing Vision-Language Model outputs on the <span style={{ color: '#06b6d4', fontWeight: 600 }}>LEVIR-CD</span> remote sensing dataset. Score, compare, and refine change detection accuracy.
               </p>
               
-              <div className="flex justify-center pt-6">
+              <div className="flex justify-center gap-4 pt-6">
                 <button 
                   onClick={() => document.getElementById('access-section')?.scrollIntoView({ behavior: 'smooth' })}
                   className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden"
@@ -393,6 +393,20 @@ export function LandingPage() {
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
                     style={{ background: 'linear-gradient(135deg, #4f46e5 0%, #0891b2 100%)' }} 
                   />
+                </button>
+
+                <button 
+                  onClick={() => window.location.href = '/results'}
+                  className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden border"
+                  style={{ 
+                    background: 'transparent',
+                    borderColor: 'rgba(99, 102, 241, 0.5)',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(99, 102, 241, 0.2)'; e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.background = 'transparent'; }}
+                >
+                  <span className="relative z-10 text-lg text-indigo-400 group-hover:text-white transition-colors">View Results</span>
+                  <BarChart3 className="w-5 h-5 relative z-10 text-indigo-400 group-hover:text-white transition-colors" />
                 </button>
               </div>
             </div>

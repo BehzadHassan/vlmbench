@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     }
 
     const fileName = `${baseName}.png`;
-    const updatedLabelDir = path.join(process.cwd(), 'data', 'val', 'updated_label');
+    const updatedLabelDir = path.join(process.cwd(), 'public', 'val', 'updated_label');
 
     if (!fs.existsSync(updatedLabelDir)) {
       fs.mkdirSync(updatedLabelDir, { recursive: true });

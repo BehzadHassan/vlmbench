@@ -26,6 +26,15 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
 
   if (!selectedItem) return null;
 
+  const getImageUrl = (type: 'A' | 'B' | 'label', name: string | undefined) => {
+    if (!name) return '';
+    let baseName = name;
+    if (name.endsWith('_A') || name.endsWith('_B')) {
+      baseName = name.slice(0, -2);
+    }
+    return `/val/${type}/${baseName}.png`;
+  };
+
   const handleImagePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -107,19 +116,19 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
           }}
         >
           {imageType === 'A' && (
-            <img src={`/api/image?type=A&name=${selectedItem?.image_a_name}`} className="w-full h-full object-cover" />
+            <img src={getImageUrl('A', selectedItem?.image_a_name)} className="w-full h-full object-cover" />
           )}
           {imageType === 'B' && (
-            <img src={`/api/image?type=B&name=${selectedItem?.image_b_name}`} className="w-full h-full object-cover" />
+            <img src={getImageUrl('B', selectedItem?.image_b_name)} className="w-full h-full object-cover" />
           )}
           {imageType === 'label' && (
-            <img src={`/api/image?type=label&name=${selectedItem?.image_a_name}`} className="w-full h-full object-cover invert" />
+            <img src={getImageUrl('label', selectedItem?.image_a_name)} className="w-full h-full object-cover invert" />
           )}
           {imageType === 'composite' && (
             <div className="relative w-full h-full">
-              <img src={`/api/image?type=B&name=${selectedItem?.image_b_name}`} className="w-full h-full object-cover" />
+              <img src={getImageUrl('B', selectedItem?.image_b_name)} className="w-full h-full object-cover" />
               <img
-                src={`/api/image?type=label&name=${selectedItem?.image_a_name}`}
+                src={getImageUrl('label', selectedItem?.image_a_name)}
                 className="absolute inset-0 w-full h-full object-cover pointer-events-none"
                 style={{
                   filter: `url(#mask-color-${maskColor})`,
@@ -130,8 +139,8 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
           )}
           {imageType === 'difference' && (
             <div className="relative w-full h-full">
-              <img src={`/api/image?type=A&name=${selectedItem?.image_a_name}`} className="absolute inset-0 w-full h-full object-cover" />
-              <img src={`/api/image?type=B&name=${selectedItem?.image_b_name}`} className="absolute inset-0 w-full h-full object-cover mix-blend-difference" />
+              <img src={getImageUrl('A', selectedItem?.image_a_name)} className="absolute inset-0 w-full h-full object-cover" />
+              <img src={getImageUrl('B', selectedItem?.image_b_name)} className="absolute inset-0 w-full h-full object-cover mix-blend-difference" />
             </div>
           )}
         </div>
@@ -166,10 +175,10 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}
                 onPointerMove={handleImagePointerMove}
                 onPointerLeave={handleImagePointerLeave}
-                onClick={() => setDeepZoomImage({ url: `/api/image?type=A&name=${selectedItem.image_a_name}`, title: 'IMAGE 1: BEFORE' })}
+                onClick={() => setDeepZoomImage({ url: getImageUrl('A', selectedItem.image_a_name), title: 'IMAGE 1: BEFORE' })}
               >
                 <img
-                  src={`/api/image?type=A&name=${selectedItem.image_a_name}`}
+                  src={getImageUrl('A', selectedItem.image_a_name)}
                   alt="Before"
                   className="w-full h-full object-cover pointer-events-none select-none"
                   loading="lazy"
@@ -187,10 +196,10 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                 style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}
                 onPointerMove={handleImagePointerMove}
                 onPointerLeave={handleImagePointerLeave}
-                onClick={() => setDeepZoomImage({ url: `/api/image?type=B&name=${selectedItem.image_b_name}`, title: 'IMAGE 2: AFTER' })}
+                onClick={() => setDeepZoomImage({ url: getImageUrl('B', selectedItem.image_b_name), title: 'IMAGE 2: AFTER' })}
               >
                 <img
-                  src={`/api/image?type=B&name=${selectedItem.image_b_name}`}
+                  src={getImageUrl('B', selectedItem.image_b_name)}
                   alt="After"
                   className="w-full h-full object-cover pointer-events-none select-none"
                   loading="lazy"
@@ -225,7 +234,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                 {thirdColMode === 'raw-mask' && (
                   <>
                     <img
-                      src={`/api/image?type=label&name=${selectedItem.image_a_name}`}
+                      src={getImageUrl('label', selectedItem.image_a_name)}
                       alt="Raw Mask"
                       className="w-full h-full object-cover invert pointer-events-none select-none"
                       loading="lazy"
@@ -238,12 +247,12 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                 {thirdColMode === 'overlay' && (
                   <>
                     <img
-                      src={`/api/image?type=B&name=${selectedItem.image_b_name}`}
+                      src={getImageUrl('B', selectedItem.image_b_name)}
                       alt="After"
                       className="w-full h-full object-cover pointer-events-none select-none"
                     />
                     <img
-                      src={`/api/image?type=label&name=${selectedItem.image_a_name}`}
+                      src={getImageUrl('label', selectedItem.image_a_name)}
                       alt="Ground Truth Label"
                       className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
                       style={{
@@ -259,12 +268,12 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                 {thirdColMode === 'difference' && (
                   <>
                     <img
-                      src={`/api/image?type=A&name=${selectedItem.image_a_name}`}
+                      src={getImageUrl('A', selectedItem.image_a_name)}
                       className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
                       alt="Difference Base"
                     />
                     <img
-                      src={`/api/image?type=B&name=${selectedItem.image_b_name}`}
+                      src={getImageUrl('B', selectedItem.image_b_name)}
                       className="absolute inset-0 w-full h-full object-cover mix-blend-difference pointer-events-none select-none"
                       alt="Difference Blend"
                     />
@@ -385,13 +394,13 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
             style={{ border: '3px solid var(--bg-card-highest)', boxShadow: 'var(--shadow-lg)', background: 'var(--bg-card)' }}
           >
             <img
-              src={`/api/image?type=B&name=${selectedItem.image_b_name}`}
+              src={getImageUrl('B', selectedItem.image_b_name)}
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               alt="After"
             />
 
             <img
-              src={`/api/image?type=A&name=${selectedItem.image_a_name}`}
+              src={getImageUrl('A', selectedItem.image_a_name)}
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               style={{
                 clipPath: swipeOrientation === 'vertical' 

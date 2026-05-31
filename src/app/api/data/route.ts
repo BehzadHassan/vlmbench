@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
-import Papa from 'papaparse';
 import prisma from '@/lib/prisma';
 
-const CSV_PATH = path.join(process.cwd(), 'data', 'results', 'batch_results_20260528_234016.csv');
+export const revalidate = 60; // Cache for 60 seconds (ISR)
+
 
 const PROMPTS: Record<string, string> = {
     'P1': 'You are a remote sensing analyst examining two high-resolution\nsatellite images of the same geographic location taken at different\npoints in time.\n\nIMAGE 1 is the BEFORE image (earlier date).\nIMAGE 2 is the AFTER image (later date).\n\nThese overhead RGB images show an urban or peri-urban area. Study\nboth images carefully — pay attention to structures, roads,\nvegetation, open land, and water bodies.\n\nWrite a concise change detection report covering:\n1. WHETHER a meaningful change occurred (or if the scene is unchanged)\n2. WHAT type of change occurred (e.g. new building footprints,\n   demolition, road widening, vegetation loss, flooding,\n   land clearance)\n3. WHERE the change is located (use spatial references:\n   north/south/east/west, center, corners, relative to landmarks\n   visible in the image)\n4. HOW LARGE the changed area appears relative to the whole image\n5. WHAT remained unchanged\n\nKeep the report factual and objective. If you are uncertain about\na detail, say so explicitly rather than guessing.',
@@ -15,20 +13,11 @@ const PROMPTS: Record<string, string> = {
 
 export async function GET() {
   try {
-    if (!fs.existsSync(CSV_PATH)) {
-      return NextResponse.json({ error: `CSV file not found at ${CSV_PATH}` }, { status: 404 });
-    }
-
-    const csvContent = fs.readFileSync(CSV_PATH, 'utf-8');
-    
-    // Parse CSV
-    const parsed = Papa.parse(csvContent, {
-      header: true,
-      skipEmptyLines: true,
-    });
-
     let evaluations: Record<string, any> = {};
+    let predictions: any[] = [];
+    
     try {
+      predictions = await prisma.prediction.findMany();
       const dbEvaluations = await prisma.evaluation.findMany();
       dbEvaluations.forEach(ev => {
         evaluations[ev.id] = {
@@ -40,13 +29,14 @@ export async function GET() {
         };
       });
     } catch (e) {
-      console.error('Failed to fetch evaluations from Prisma', e);
+      console.error('Failed to fetch from Prisma', e);
+      return NextResponse.json({ error: 'Database connection failed' }, { status: 500 });
     }
 
-    // Merge CSV rows with evaluations and expand for each prompt
+    // Merge Predictions with evaluations and expand for each prompt
     let data: any[] = [];
     
-    parsed.data.forEach((row: any) => {
+    predictions.forEach((row: any) => {
       const promptKeys = ['P1', 'P2', 'P3', 'P4'];
       
       promptKeys.forEach(promptKey => {
@@ -88,7 +78,11 @@ export async function GET() {
       item.index = i;
     });
 
-    return NextResponse.json({ data });
+    return NextResponse.json({ data }, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=300',
+      }
+    });
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
