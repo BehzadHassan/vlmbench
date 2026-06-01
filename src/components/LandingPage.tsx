@@ -381,7 +381,7 @@ export function LandingPage() {
               <div className="flex justify-center gap-4 pt-6">
                 <button 
                   onClick={() => document.getElementById('access-section')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden"
+                  className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden cursor-pointer"
                   style={{ 
                     background: 'linear-gradient(135deg, #6366f1 0%, #06b6d4 100%)',
                     boxShadow: '0 8px 30px rgba(99, 102, 241, 0.4)'
@@ -398,7 +398,7 @@ export function LandingPage() {
 
                 <Link 
                   href="/results"
-                  className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden border"
+                  className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden border cursor-pointer"
                   style={{ 
                     background: 'transparent',
                     borderColor: 'rgba(99, 102, 241, 0.5)',
@@ -554,7 +554,7 @@ export function LandingPage() {
 
               {/* Admin Card */}
               <div
-                className="group text-left p-8 md:p-10 rounded-2xl transition-all duration-500 relative overflow-hidden"
+                className="group text-left p-8 md:p-10 rounded-2xl transition-all duration-500 relative overflow-hidden cursor-pointer"
                 style={{ 
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(255, 255, 255, 0.06)',
@@ -645,7 +645,7 @@ export function LandingPage() {
                       <div className="flex gap-2 pt-1">
                         <button
                           onClick={() => { setShowAdminInput(false); setError(''); setPassword(''); }}
-                          className="px-5 py-3 rounded-xl text-sm font-bold transition-colors"
+                          className="px-5 py-3 rounded-xl text-sm font-bold transition-colors cursor-pointer"
                           style={{ color: '#94a3b8', border: '1px solid rgba(255,255,255,0.08)' }}
                           onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}
                           onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
@@ -655,7 +655,7 @@ export function LandingPage() {
                         <button
                           onClick={handleAdminLogin}
                           disabled={isLoading}
-                          className="flex-1 py-3 rounded-xl text-sm font-bold disabled:opacity-50 transition-all flex items-center justify-center gap-2"
+                          className="flex-1 py-3 rounded-xl text-sm font-bold disabled:opacity-50 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
                           style={{ 
                             background: 'linear-gradient(135deg, #06b6d4, #22d3ee)', 
                             color: '#fff',
@@ -691,7 +691,7 @@ export function LandingPage() {
                 href="https://behzadhassan-dev.vercel.app" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="font-bold tracking-wide transition-colors duration-300"
+                className="font-bold tracking-wide transition-colors duration-300 cursor-pointer"
                 style={{ color: '#38bdf8' }}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
                 onMouseLeave={(e) => e.currentTarget.style.color = '#38bdf8'}

@@ -15,9 +15,16 @@ This benchmark utilizes the **LEVIR-CD** (Learning Vision and Remote sensing - C
 
 The platform automatically serves updated ground truth masks (labels) via an intelligent `updated_label` detection system, ensuring evaluators always see the most accurate change maps available. 
 
+## Project Status & Disclaimer
+
+> [!WARNING]
+> **Current Dashboard Data:** The evaluation scores (0-5 metrics) currently displayed on the live dashboard are **randomly generated placeholders** used strictly to test the UI, charts, and application logic. However, the **model predictions and responses are real** outputs from the VLM. We are actively working to conduct thorough human reviews and replace these random placeholders with real, authenticated evaluation metrics.
+
 ## Models Evaluated
 
-The current evaluation pipeline includes benchmarking the **Qwen2-VL-2B** model. The architecture is designed to be extensible, allowing for the integration and comparison of multiple state-of-the-art vision-language models in future iterations.
+Currently, the evaluation pipeline features **Qwen2-VL-2B** acting as our primary sample model to establish the benchmark's foundation. 
+
+**Future Work:** The architecture is designed to be highly extensible. Our immediate roadmap includes performing this rigorous evaluation pipeline over multiple state-of-the-art vision-language models and rendering comparative analysis directly on the dashboard.
 
 ## Evaluation Pipeline & Prompts
 
@@ -30,13 +37,13 @@ The evaluation methodology is structured around a rigorous prompt engineering pi
 
 ## Key Application Features
 
-### 🛠 Dynamic Evaluation Metrics (Admin Dashboard)
+### Dynamic Evaluation Metrics (Admin Dashboard)
 - **Customizable Rubrics:** 10 core metrics (M1-M10) dynamically mapped to the 4 prompt strategies.
 - **Admin Control:** An Admin Dashboard allows reviewers to create, edit, copy, and reorder metrics on the fly.
 - **Dynamic Ranges:** Set custom Minimum, Maximum, and Default boundaries for any metric (e.g., 0-5, 1-10).
 - **Scoring Explainers:** Interactive "Info" boxes on the evaluation form display exact rules for each score tier (e.g., 5=Highly Accurate, 0=Hallucination) to eliminate subjective grading.
 
-### 🔍 Advanced Image Visualizer
+### Advanced Image Visualizer
 - **Side-by-Side & Swipe Modes:** Evaluators can inspect images next to each other, or use an interactive horizontal/vertical slider to wipe between the 'Before' and 'After' shots.
 - **Deep Zoom & Magnifier:** Hover over imagery to reveal a crosshair magnifying glass, or click to launch a full-screen Deep Zoom modal.
 - **3rd View Mode (Analysis Layer):** Toggle the third panel between:

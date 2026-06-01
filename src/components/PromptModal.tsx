@@ -22,7 +22,7 @@ export default function PromptModal({ title, text }: { title: string; text: stri
     <>
       <button 
         onClick={() => setIsOpen(true)}
-        className="mt-3 text-[11px] uppercase tracking-wider font-bold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 select-none w-max outline-none group"
+        className="mt-3 text-[11px] uppercase tracking-wider font-bold text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5 select-none w-max outline-none group cursor-pointer"
       >
         <span className="w-5 h-5 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
           <FileText className="w-3 h-3" />
@@ -58,7 +58,7 @@ export default function PromptModal({ title, text }: { title: string; text: stri
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -75,7 +75,7 @@ export default function PromptModal({ title, text }: { title: string; text: stri
             <div className="p-4 border-t border-slate-800 bg-slate-900 flex justify-end">
               <button
                 onClick={() => setIsOpen(false)}
-                className="px-6 py-2 rounded-lg text-sm font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors border border-slate-700"
+                className="px-6 py-2 rounded-lg text-sm font-bold bg-slate-800 text-slate-200 hover:bg-slate-700 transition-colors border border-slate-700 cursor-pointer"
               >
                 Close
               </button>
