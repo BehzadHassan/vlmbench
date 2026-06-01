@@ -181,7 +181,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                   src={getImageUrl('A', selectedItem.image_a_name)}
                   alt="Before"
                   className="w-full h-full object-cover pointer-events-none select-none"
-                  loading="lazy"
+                  fetchPriority="high"
                 />
                 {renderDirectionHints()}
                 {renderMagnifier('A')}
@@ -202,7 +202,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                   src={getImageUrl('B', selectedItem.image_b_name)}
                   alt="After"
                   className="w-full h-full object-cover pointer-events-none select-none"
-                  loading="lazy"
+                  fetchPriority="high"
                 />
                 {renderDirectionHints()}
                 {renderMagnifier('B')}
@@ -237,7 +237,7 @@ export function Visualizer({ selectedItem, viewMode, isModalContext = false }: V
                       src={getImageUrl('label', selectedItem.image_a_name)}
                       alt="Raw Mask"
                       className="w-full h-full object-cover invert pointer-events-none select-none"
-                      loading="lazy"
+                      fetchPriority="high"
                     />
                     {renderDirectionHints()}
                     {renderMagnifier('label')}

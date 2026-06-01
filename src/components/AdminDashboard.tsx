@@ -126,6 +126,11 @@ export function AdminDashboard() {
   const totalPages = Math.max(1, Math.ceil(filteredData.length / itemsPerPage));
   const paginatedData = filteredData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
+  const currentFilteredIndex = selectedItem ? filteredData.findIndex(item => item.id === selectedItem.id) : -1;
+  const nextItem = currentFilteredIndex !== -1 && currentFilteredIndex < filteredData.length - 1 
+    ? filteredData[currentFilteredIndex + 1] 
+    : null;
+
   const navigateNext = () => {
     if (filteredData.length === 0) return;
     const currentFilteredIndex = filteredData.findIndex(item => item.id === selectedItem?.id);
@@ -357,6 +362,15 @@ export function AdminDashboard() {
           role="admin"
         />
       </div>
+
+      {/* Preloader for next item */}
+      {nextItem && (
+        <div style={{ display: 'none' }}>
+          <img src={`/val/A/${nextItem.image_a_name.replace('_A', '')}.png`} />
+          <img src={`/val/B/${nextItem.image_b_name.replace('_B', '')}.png`} />
+          <img src={`/val/label/${nextItem.image_a_name.replace('_A', '')}.png`} />
+        </div>
+      )}
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden z-20">
