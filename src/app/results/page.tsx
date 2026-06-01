@@ -2,6 +2,7 @@ import React from 'react';
 import prisma from '@/lib/prisma';
 import { ArrowLeft, BarChart3, TrendingUp, Layers, Info, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
+import PromptModal from '@/components/PromptModal';
 
 export const revalidate = 60; // Cache data for 60 seconds to drastically improve load times
 
@@ -55,10 +56,26 @@ export default async function ResultsPage() {
 
   const prompts = ['P1', 'P2', 'P3', 'P4'];
   const promptDetails = {
-    'P1': { title: 'P1: Narrative Report', desc: 'Requires a concise, objective report covering change status, type, location, scale, and unchanged elements.' },
-    'P2': { title: 'P2: Step-by-Step Analysis', desc: 'Forces structured reasoning: describing Image 1, Image 2, identifying differences, and culminating in a final report.' },
-    'P3': { title: 'P3: Intelligence-Grade', desc: 'Demands a highly structured, strict classification report citing specific visual evidence to support conclusions.' },
-    'P4': { title: 'P4: Zero-Shot Baseline', desc: 'Provides minimal instruction, serving as a baseline to measure unguided change detection capabilities.' }
+    'P1': { 
+      title: 'P1: Narrative Report', 
+      desc: 'Requires a concise, objective report covering change status, type, location, scale, and unchanged elements.',
+      text: `You are a remote sensing analyst examining two high-resolution\nsatellite images of the same geographic location taken at different\npoints in time.\n\nIMAGE 1 is the BEFORE image (earlier date).\nIMAGE 2 is the AFTER image (later date).\n\nThese overhead RGB images show an urban or peri-urban area. Study\nboth images carefully — pay attention to structures, roads,\nvegetation, open land, and water bodies.\n\nWrite a concise change detection report covering:\n1. WHETHER a meaningful change occurred (or if the scene is unchanged)\n2. WHAT type of change occurred (e.g. new building footprints,\n   demolition, road widening, vegetation loss, flooding,\n   land clearance)\n3. WHERE the change is located (use spatial references:\n   north/south/east/west, center, corners, relative to landmarks\n   visible in the image)\n4. HOW LARGE the changed area appears relative to the whole image\n5. WHAT remained unchanged\n\nKeep the report factual and objective. If you are uncertain about\na detail, say so explicitly rather than guessing.`
+    },
+    'P2': { 
+      title: 'P2: Step-by-Step Analysis', 
+      desc: 'Forces structured reasoning: describing Image 1, Image 2, identifying differences, and culminating in a final report.',
+      text: `You are a remote sensing analyst examining two high-resolution\nsatellite images of the same geographic location taken at different\npoints in time.\n\nIMAGE 1 is the BEFORE image. IMAGE 2 is the AFTER image.\nThese overhead RGB images show an urban or peri-urban area.\n\nFollow each step in order and write your answer for each step:\n\nSTEP 1 — DESCRIBE IMAGE 1:\nIn 2-3 sentences, describe the main features you see in the BEFORE\nimage. Cover structures, roads, vegetation, and open land. Note\nlocations using at least two of: north / south / east / west /\ncenter.\n\nSTEP 2 — DESCRIBE IMAGE 2:\nIn 2-3 sentences, describe the same features in the AFTER image\nusing the same structure as Step 1.\n\nSTEP 3 — IDENTIFY DIFFERENCES:\nCompare your two descriptions above. What is present in one image\nbut not the other? What has changed in appearance, size, or\nposition? List only what is clearly observable.\n\nSTEP 4 — FINAL REPORT:\nBased on your comparison in Step 3, write a concise report:\n- Change status: Did meaningful change occur? (Yes / No / Uncertain)\n- Change type: What changed? (e.g. new construction, demolition,\n  road widening, vegetation loss, land clearance)\n- Location: Where? Use at least two directional references\n  (north/south/east/west). Do not use "center" as the only reference.\n- Scale: Small (under 10%), Moderate (10-40%), or Large (over 40%)\n  of the image. Do not estimate a specific percentage.\n- Unchanged: What remained the same?\n\nImportant: Do not contradict observations you made in earlier steps.\nIf uncertain about any detail, say so explicitly.`
+    },
+    'P3': { 
+      title: 'P3: Intelligence-Grade', 
+      desc: 'Demands a highly structured, strict classification report citing specific visual evidence to support conclusions.',
+      text: `You are a satellite imagery analyst producing an\nintelligence-grade change detection report.\n\nIMAGE 1 is the BEFORE image. IMAGE 2 is the AFTER image.\nThese overhead RGB images show an urban or peri-urban area.\n\nWrite a structured report covering each section below:\n\n1. CHANGE STATUS\n   Did a meaningful change occur? Answer: Yes / No / Uncertain\n\n2. CHANGE TYPE\n   Classify the change as one of:\n   - Construction (new buildings or extensions)\n   - Demolition (removed structures)\n   - Infrastructure (roads, walls, fences, utilities)\n   - Vegetation (clearance, growth, burning)\n   - Land Use (agricultural, industrial, or residential shift)\n   - No Change\n   - Other (describe briefly)\n\n3. LOCATION\n   Where is the change? Use at least two directional references\n   (north/south/east/west) and one visible landmark if available.\n   Do not use "center" as your only reference.\n\n4. SCALE\n   Estimate the affected area as:\n   Small (under 10%) / Moderate (10-40%) / Large (over 40%)\n   Do not estimate a specific percentage.\n\n5. VISUAL EVIDENCE\n   List 2-3 specific visual observations that support your\n   conclusion. Examples: new rooftops visible, disturbed soil,\n   shadow differences, road markings added, vegetation removed.\n   Only cite what you can actually see.\n\n6. UNCHANGED ELEMENTS\n   What remained the same between the two images?\n\nRemain strictly objective. Do not speculate beyond what is\nvisually observable. If uncertain about any section, say so\nexplicitly.`
+    },
+    'P4': { 
+      title: 'P4: Zero-Shot Baseline', 
+      desc: 'Provides minimal instruction, serving as a baseline to measure unguided change detection capabilities.',
+      text: `You are a remote sensing analyst.\n\nIMAGE 1 is the BEFORE image. IMAGE 2 is the AFTER image.\n\nDescribe what changed between the two satellite images.\nBe specific about what changed, where it changed,\nand how much of the image is affected.`
+    }
   };
 
   const dbKeys = {
@@ -226,9 +243,14 @@ export default async function ResultsPage() {
                 }}
               >
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-6 sm:mb-8 gap-4">
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg sm:text-xl font-bold text-cyan-50 mb-1">{promptDetails[p as keyof typeof promptDetails].title}</h3>
                     <p className="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">{promptDetails[p as keyof typeof promptDetails].desc}</p>
+                    
+                    <PromptModal 
+                      title={promptDetails[p as keyof typeof promptDetails].title} 
+                      text={promptDetails[p as keyof typeof promptDetails].text} 
+                    />
                   </div>
                   <span className="text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full shrink-0 self-start" style={{ background: 'rgba(6, 182, 212, 0.1)', color: '#22d3ee' }}>
                     {promptStats[p].total} evals
