@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Eye, Shield, ArrowRight, Lock, AlertCircle, Scan, Cpu, BrainCircuit, Activity, Sparkles, Satellite, Globe, Zap, BarChart3, LayoutDashboard } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import Link from 'next/link';
 
 // --- Image Compare Component ---
 const ImageCompare = ({ before, after, mask }: { before: string; after: string; mask?: string }) => {
@@ -395,8 +396,8 @@ export function LandingPage() {
                   />
                 </button>
 
-                <button 
-                  onClick={() => window.location.href = '/results'}
+                <Link 
+                  href="/results"
                   className="group relative flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-white transition-all overflow-hidden border"
                   style={{ 
                     background: 'transparent',
@@ -407,7 +408,7 @@ export function LandingPage() {
                 >
                   <span className="relative z-10 text-lg text-indigo-400 group-hover:text-white transition-colors">View Results</span>
                   <BarChart3 className="w-5 h-5 relative z-10 text-indigo-400 group-hover:text-white transition-colors" />
-                </button>
+                </Link>
               </div>
             </div>
 
